@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NodeInstance : MonoBehaviour
 {
-    private GameObject node;
+    [SerializeField]
+    public List<GameObject> NodeType;
 
     private void Start() {
         Debug.Log("Criei Node");

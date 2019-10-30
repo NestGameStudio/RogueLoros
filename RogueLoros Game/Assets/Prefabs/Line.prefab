@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxNodesInLine: 6
-  nodePrefab: {fileID: 8013045552284416061, guid: 7e25c30d328e88e4299ee6840bb913e4,
+  nodePrefab: {fileID: 7329819433191029454, guid: 1652ff20262fd9e4a94bce2da8f650da,
     type: 3}
