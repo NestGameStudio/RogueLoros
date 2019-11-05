@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    private static GridManager _instance;
+    public static GridManager Instance { get { return _instance; } }
+
     public GameObject linePrefab;
     public GameObject nodePrefab;   // usado meramente para calcular o numero de linhas na tela
     public GameObject initialNode;
@@ -23,6 +26,14 @@ public class GridManager : MonoBehaviour
         createInitialGrid();
     }
 
+    private void Awake() {
+        if (_instance != null && _instance != this) {
+            Destroy(this.gameObject);
+        } else {
+            _instance = this;
+        }
+    }
+
     // -------- Funções relativas a criar a grid inicial -----------
 
     private void createInitialGrid() {
@@ -33,8 +44,8 @@ public class GridManager : MonoBehaviour
             line.GetComponent<LineInstance>().ID = lineCounter;
             this.lineList.Add(line);
 
-            List<GameObject> nodeList = line.GetComponent<LineInstance>().getNodeList();
-            this.nodeList.Add(nodeList);
+            List<GameObject> nodeLineList = line.GetComponent<LineInstance>().getNodeList();
+            this.nodeList.Add(nodeLineList);
 
             lineCounter++;
         }
@@ -62,5 +73,38 @@ public class GridManager : MonoBehaviour
 
     }
 
+    // -------- Funções relativas a manutencao da grid inicial -----------
+
+    public void AddLineInGrid()
+    {
+        GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter), linePrefab.transform.rotation, this.transform);
+        line.GetComponent<LineInstance>().ID = lineCounter;
+        this.lineList.Add(line);
+
+        List<GameObject> nodeLineList = line.GetComponent<LineInstance>().getNodeList();
+        this.nodeList.Add(nodeLineList);
+
+        lineCounter++;
+    }
+
+    public void RemoveLineInGrid(GameObject line)
+    {
+        this.lineList.Remove(line);
+        this.nodeList.Remove(line.GetComponent<LineInstance>().getNodeList());
+
+        Destroy(line);
+    }
+
+    // -------- Funções de acesso a grid inicial -----------
+
+    public GameObject GetLine(int index) {
+
+        if (lineList[index])
+            return lineList[index];
+        else
+            Debug.LogError("Index a linha não existe");
+
+        return null;
+    }
 
 }

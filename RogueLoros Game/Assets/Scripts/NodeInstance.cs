@@ -8,7 +8,7 @@ public class NodeInstance : MonoBehaviour
     public List<GameObject> NodeType;
 
     private void Start() {
-        Debug.Log("Criei Node");
+        // Fazer o randomize pra cada tipo de node
     }
 
 }

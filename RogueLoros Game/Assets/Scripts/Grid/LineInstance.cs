@@ -17,12 +17,14 @@ public class LineInstance : MonoBehaviour
 
     private void Start() {
         createNodeList();
-        Debug.Log("Criei lista");
     }
 
     // -------- Funções relativas a criar a line -----------
 
     public List<GameObject> getNodeList() {
+
+        // Ou aqui
+
         return nodeList;
     }
 
@@ -32,10 +34,8 @@ public class LineInstance : MonoBehaviour
         for (int i=0; i<maxNodesInLine; i++) {
 
             GameObject node = Instantiate(nodePrefab, calculatePostitionInWorld(i), nodePrefab.transform.rotation, this.transform);      // cria uma copia do prefab
-            //node.transform.SetParent(this.transform);       // Coloca o node como filho da linha
 
-            // seta as infos do node
-            //node = node.GetComponent<NodeInstance>().createNode();
+            // Ta dando merda aqui
 
             // adiciona o node à lista de nodes da linha
             nodeList.Add(node);

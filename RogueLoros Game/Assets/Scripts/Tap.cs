@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Tap presente em cada node, apenas os nodes que estão masi próximos possuem o tap ativado
+// Quando o tap é feito o player vai até o local do node e faz a ação dele
+
 public class Tap : MonoBehaviour
 {
     // OBS: limitar o drag em favor do tap, se tiver segurando tempo suficiente vira drag
@@ -27,6 +30,9 @@ public class Tap : MonoBehaviour
         if (timer <= tapTime) {
 
             // Do Action
+            // FAz a acao do node e faz o player andar até o node
+            Debug.Log("Foi para o node");
+
             SpriteRenderer rend = this.GetComponent<SpriteRenderer>();
 
             if (rend.material.color == switchColor1) {
