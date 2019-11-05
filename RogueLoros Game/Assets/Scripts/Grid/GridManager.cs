@@ -21,17 +21,15 @@ public class GridManager : MonoBehaviour
 
     private int lineCounter = 0;
 
-    private void Start() {
-        calculateMaxNumOfLines();
-        createInitialGrid();
-    }
-
     private void Awake() {
         if (_instance != null && _instance != this) {
             Destroy(this.gameObject);
         } else {
             _instance = this;
         }
+
+        calculateMaxNumOfLines();
+        createInitialGrid();
     }
 
     // -------- Funções relativas a criar a grid inicial -----------

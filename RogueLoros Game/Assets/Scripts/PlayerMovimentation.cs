@@ -8,23 +8,33 @@ using UnityEngine;
 
 public class PlayerMovimentation: MonoBehaviour {
 
+    private static PlayerMovimentation _instance;
+    public static PlayerMovimentation Instance { get { return _instance; } }
+
     private int nextLineToMove = 0;
 
-    private void Start() {
+    // Precisa estar no awake por conta do execution order
+    private void Awake() {
+
+        if (_instance != null && _instance != this) {
+            Destroy(this.gameObject);
+        } else {
+            _instance = this;
+        }
+
         allowNextMovimentation();
     }
 
     // -------- Funções relativas a permitir que o player se mova -----------
 
     // Pega os dois nodes mais proximos do player e ativa a possibilidade de dar tap nele
-    private void allowNextMovimentation()
+    public void allowNextMovimentation()
     {
         GameObject nextLine = GridManager.Instance.GetLine(nextLineToMove);
         List<GameObject> nodes = GetClosestNodes(nextLine);
 
         foreach (GameObject node in nodes) {
-            Debug.Log(node);
-            node.GetComponentInChildren<Tap>(true).enabled = true;
+            node.GetComponent<Tap>().enabled = true;
         }
     }
 
@@ -34,7 +44,6 @@ public class PlayerMovimentation: MonoBehaviour {
         List<GameObject> closestNodes = new List<GameObject>();
 
         List<GameObject> allNodesInLine = line.GetComponent<LineInstance>().getNodeList();
-        Debug.Log(allNodesInLine.Count);
 
         GameObject closestNode = null;
         float minDist = Mathf.Infinity;
@@ -43,7 +52,6 @@ public class PlayerMovimentation: MonoBehaviour {
         while (closestNodes.Count < 2) {
 
             foreach(GameObject node in allNodesInLine) {
-                Debug.Log(closestNode + " NODE");
                 float dist = Vector3.Distance(node.transform.position, currentPos);
 
                 if (dist < minDist) {
@@ -51,8 +59,6 @@ public class PlayerMovimentation: MonoBehaviour {
                     minDist = dist;
                 }
             }
-
-            Debug.Log(closestNode + " NODE ENTROU");
 
             closestNodes.Add(closestNode);
             allNodesInLine.Remove(closestNode);
@@ -69,13 +75,14 @@ public class PlayerMovimentation: MonoBehaviour {
     // Move o player para o node
     // Adiciona uma nova linha na grid para que player ande
     // Chamado pelo Tap
-    public void MovePlayer() {
+    public void MovePlayer(Vector3 position) {
 
-        changePlayerNode();
+        changePlayerNode(position);
         GridManager.Instance.AddLineInGrid();
     }
 
-    private void changePlayerNode() {
+    private void changePlayerNode(Vector3 position) {
+        this.transform.position = position;
         Debug.Log("Andou");
     }
 }

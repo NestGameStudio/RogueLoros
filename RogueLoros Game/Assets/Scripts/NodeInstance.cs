@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//public enum NodeType { None, Health, Enemy }
+
 public class NodeInstance : MonoBehaviour
 {
     [SerializeField]
-    public List<GameObject> NodeType;
+    public List<GameObject> NodeTypes;
 
-    private void Start() {
-        // Fazer o randomize pra cada tipo de node
+    //private NodeType tipo = NodeType.None;
+
+    public GameObject RandomizeType() {
+
+        int rand = Random.Range(0, NodeTypes.Count);
+        return NodeTypes[rand];
     }
+    
+
 
 }

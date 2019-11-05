@@ -15,16 +15,13 @@ public class LineInstance : MonoBehaviour
     private List<GameObject> nodeList = new List<GameObject>();
     private float nodeSize;
 
-    private void Start() {
+    private void Awake() {
         createNodeList();
     }
 
     // -------- Funções relativas a criar a line -----------
 
     public List<GameObject> getNodeList() {
-
-        // Ou aqui
-
         return nodeList;
     }
 
@@ -33,9 +30,8 @@ public class LineInstance : MonoBehaviour
 
         for (int i=0; i<maxNodesInLine; i++) {
 
-            GameObject node = Instantiate(nodePrefab, calculatePostitionInWorld(i), nodePrefab.transform.rotation, this.transform);      // cria uma copia do prefab
-
-            // Ta dando merda aqui
+            GameObject nodeType = nodePrefab.GetComponent<NodeInstance>().RandomizeType();
+            GameObject node = Instantiate(nodeType, calculatePostitionInWorld(i), nodePrefab.transform.rotation, this.transform);      // cria uma copia do prefab
 
             // adiciona o node à lista de nodes da linha
             nodeList.Add(node);
