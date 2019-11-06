@@ -12,6 +12,9 @@ public class Tap : MonoBehaviour
 
     public GameObject Player;
 
+    // Raycast
+    private RaycastHit2D hit;
+
     // Tempo maximo até o player soltar o botão para que ele considere como tap
     public float tapTime = 0.13f;
 
@@ -20,6 +23,11 @@ public class Tap : MonoBehaviour
 
     private void OnMouseDown() {
         tapped = true;
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+        hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
     }
 
     private void OnMouseUp() {
@@ -29,11 +37,14 @@ public class Tap : MonoBehaviour
         if (timer <= tapTime) {
 
             // Faz a acao do node e faz o player andar até o node
-            Debug.Log("Fez o tap");
-            this.GetComponent<NodeAction>().DoAction();
+            if (hit.collider.gameObject != null) {
+                if (hit.collider.gameObject.GetComponent<NodeActive>().isActiveAndEnabled) {
+                    this.GetComponent<NodeAction>().DoAction();
 
-            PlayerMovimentation.Instance.MovePlayer(this.transform.position);
-            PlayerMovimentation.Instance.allowNextMovimentation();
+                    PlayerMovimentation.Instance.MovePlayer(this.transform.position);
+                    PlayerMovimentation.Instance.allowNextMovimentation();
+                }
+            }
         }
 
         timer = 0;

@@ -13,6 +13,8 @@ public class PlayerMovimentation: MonoBehaviour {
 
     private int nextLineToMove = 0;
 
+    private List<GameObject> currentPossibleNodes = new List<GameObject>();
+
     // Precisa estar no awake por conta do execution order
     private void Awake() {
 
@@ -31,10 +33,10 @@ public class PlayerMovimentation: MonoBehaviour {
     public void allowNextMovimentation()
     {
         GameObject nextLine = GridManager.Instance.GetLine(nextLineToMove);
-        List<GameObject> nodes = GetClosestNodes(nextLine);
+        currentPossibleNodes = GetClosestNodes(nextLine);
 
-        foreach (GameObject node in nodes) {
-            node.GetComponent<Tap>().enabled = true;
+        foreach (GameObject node in currentPossibleNodes) {
+            node.GetComponent<NodeActive>().enabled = true;
         }
     }
 
@@ -83,6 +85,13 @@ public class PlayerMovimentation: MonoBehaviour {
 
     private void changePlayerNode(Vector3 position) {
         this.transform.position = position;
-        Debug.Log("Andou");
+
+        foreach(GameObject node in currentPossibleNodes) {
+            if (node != this.gameObject) {
+                node.GetComponent<NodeActive>().enabled = false;
+            }
+        }
+
+        nextLineToMove++;
     }
 }
