@@ -28,6 +28,8 @@ public class LineInstance : MonoBehaviour
     // Cria uma lista de nodes para a linha
     private void createNodeList() {
 
+        Debug.Log("dps aqui");
+
         for (int i=0; i<maxNodesInLine; i++) {
 
             GameObject nodeType = nodePrefab.GetComponent<NodeInstance>().RandomizeType();
@@ -54,8 +56,12 @@ public class LineInstance : MonoBehaviour
 
         Vector3 linePos;
 
+        Debug.Log("ID - " + ID);
+
         // Verifica se a linha é par
         if (ID % 2 == 0) {
+
+            Debug.Log("Linha é par - " + ID);
 
             if (i % 2 == 0) {   // dispôe os blocos pares a direita e os impares à esquerda
 
@@ -76,6 +82,8 @@ public class LineInstance : MonoBehaviour
             }
 
         } else {
+
+            Debug.Log("Linha é impar");
 
             if (i % 2 == 0) {   // dispôe os blocos pares a direita e os impares à esquerda
 

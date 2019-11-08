@@ -11,6 +11,8 @@ public class PlayerMovimentation: MonoBehaviour {
     private static PlayerMovimentation _instance;
     public static PlayerMovimentation Instance { get { return _instance; } }
 
+    [HideInInspector] public bool Started = false;
+
     private int nextLineToMove = 0;
 
     private List<GameObject> currentPossibleNodes = new List<GameObject>();
@@ -91,6 +93,9 @@ public class PlayerMovimentation: MonoBehaviour {
                 node.GetComponent<NodeActive>().enabled = false;
             }
         }
+
+        if (!Started)
+            Started = true;
 
         nextLineToMove++;
     }

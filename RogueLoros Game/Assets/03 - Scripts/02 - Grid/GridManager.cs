@@ -39,6 +39,7 @@ public class GridManager : MonoBehaviour
         for (int i=0; i<maxLinesPerGrid; i++) {
 
             GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(i), linePrefab.transform.rotation, this.transform);
+            Debug.Log("Entrei aqui");
             line.GetComponent<LineInstance>().ID = lineCounter;
             this.lineList.Add(line);
 
