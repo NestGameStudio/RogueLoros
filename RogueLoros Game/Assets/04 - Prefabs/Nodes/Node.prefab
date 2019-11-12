@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2418432097341596753}
   - component: {fileID: 8803732194423653713}
   - component: {fileID: 4582011608306363074}
-  - component: {fileID: 7954544588080228587}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -140,15 +139,3 @@ MonoBehaviour:
   - {fileID: 828593335800045982, guid: e450a38a3c6462349a86222558415572, type: 3}
   canWalkInThisNode: 0
   lineShader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
---- !u!114 &7954544588080228587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7329819433191029454}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb35371c86af48f4a940e3657d08238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
