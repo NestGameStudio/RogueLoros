@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class NodeActive : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Unica razao da existencia desse script é ser uma forma de avaliar se o node é util ou nao;
+    // Talvez usar uma bool publica no Node Instance?
 }

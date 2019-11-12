@@ -11,22 +11,33 @@ public class PlayerMovimentation: MonoBehaviour {
     private static PlayerMovimentation _instance;
     public static PlayerMovimentation Instance { get { return _instance; } }
 
+    public GameObject InitialNode;
+
     [HideInInspector] public bool Started = false;
 
     private int nextLineToMove = 0;
 
     private List<GameObject> currentPossibleNodes = new List<GameObject>();
 
-    // Precisa estar no awake por conta do execution order
+    private GameObject currentNode;
+
     private void Awake() {
 
-        if (_instance != null && _instance != this) {
+        if (_instance != null && _instance != this){
             Destroy(this.gameObject);
         } else {
             _instance = this;
         }
 
-        allowNextMovimentation();
+        Started = false;
+        currentNode = InitialNode;
+    }
+
+    private void Start() {
+
+        // Como a execution order do unity nao faz nenhum sentido
+        // Usa uma corrotina que aguarda a grid ser toda instanciada para permitir que o player ande
+        StartCoroutine(WaitToGrid());
     }
 
     // -------- Funções relativas a permitir que o player se mova -----------
@@ -38,7 +49,8 @@ public class PlayerMovimentation: MonoBehaviour {
         currentPossibleNodes = GetClosestNodes(nextLine);
 
         foreach (GameObject node in currentPossibleNodes) {
-            node.GetComponent<NodeActive>().enabled = true;
+            node.GetComponent<NodeInstance>().canWalkInThisNode = true;
+            currentNode.GetComponent<NodeInstance>().DrawLine(node.transform.position);
         }
     }
 
@@ -79,24 +91,52 @@ public class PlayerMovimentation: MonoBehaviour {
     // Move o player para o node
     // Adiciona uma nova linha na grid para que player ande
     // Chamado pelo Tap
-    public void MovePlayer(Vector3 position) {
+    public void MovePlayer(GameObject node) {
 
-        changePlayerNode(position);
+        changePlayerNode(node);
         GridManager.Instance.AddLineInGrid();
     }
 
-    private void changePlayerNode(Vector3 position) {
-        this.transform.position = position;
+    private void changePlayerNode(GameObject newNode) {
+        this.transform.position = newNode.transform.position;
 
+        currentNode.GetComponent<NodeInstance>().DestroyLines();
+
+        // tira a possibilidade de voltar no node
         foreach(GameObject node in currentPossibleNodes) {
-            if (node != this.gameObject) {
-                node.GetComponent<NodeActive>().enabled = false;
-            }
+            node.GetComponent<NodeInstance>().canWalkInThisNode = false;
         }
+
+        currentNode = newNode;
 
         if (!Started)
             Started = true;
 
         nextLineToMove++;
+    }
+
+    // -------- Funções que espera o carregamento da grid -----------
+
+    IEnumerator WaitToGrid() {
+
+        bool gridCreated = false;
+        List<GameObject> lineList;
+
+        while (!gridCreated) {
+
+            lineList = GridManager.Instance.GetAllLines();
+            if (lineList.Count > 0) {
+                foreach (GameObject line in lineList) {
+                    if (line.GetComponent<LineInstance>().getNodeList().Count > 0) {
+                        gridCreated = true;
+                    } else {
+                        gridCreated = false;
+                    }
+                }
+            }
+            yield return new WaitForEndOfFrame();   
+        }
+
+        allowNextMovimentation();
     }
 }

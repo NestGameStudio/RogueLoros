@@ -15,7 +15,7 @@ public class LineInstance : MonoBehaviour
     private List<GameObject> nodeList = new List<GameObject>();
     private float nodeSize;
 
-    private void Awake() {
+    private void Start() {
         createNodeList();
     }
 
@@ -27,8 +27,6 @@ public class LineInstance : MonoBehaviour
 
     // Cria uma lista de nodes para a linha
     private void createNodeList() {
-
-        Debug.Log("dps aqui");
 
         for (int i=0; i<maxNodesInLine; i++) {
 

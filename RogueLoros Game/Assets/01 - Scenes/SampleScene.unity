@@ -169,7 +169,7 @@ MonoBehaviour:
   minDistance: 2
   followDistance: 10
   target: {fileID: 213467744}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0.4, z: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -374,6 +374,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1638933227, guid: 386b5745d89375345ad54cd1a8a3cb07, type: 3}
+      propertyPath: InitialNode
+      value: 
+      objectReference: {fileID: 578686507}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 386b5745d89375345ad54cd1a8a3cb07, type: 3}
 --- !u!1001 &2513469436465390865

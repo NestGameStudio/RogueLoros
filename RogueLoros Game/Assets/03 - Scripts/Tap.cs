@@ -28,12 +28,13 @@ public class Tap : MonoBehaviour
         // Faz a acao do node e faz o player andar até o node
         if (hit.collider.gameObject != null)
         {
-            if (hit.collider.gameObject.GetComponent<NodeActive>().isActiveAndEnabled)
+            if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode)
             {
                 this.GetComponent<NodeAction>().DoAction();
 
-                PlayerMovimentation.Instance.MovePlayer(this.transform.position);
-                PlayerMovimentation.Instance.allowNextMovimentation();
+                PlayerMovimentation playerMov = PlayerMovimentation.Instance;
+                playerMov.MovePlayer(this.gameObject);
+                playerMov.allowNextMovimentation();
             }
         }
     }

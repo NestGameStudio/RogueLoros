@@ -26,8 +26,10 @@ public class GridManager : MonoBehaviour
             Destroy(this.gameObject);
         } else {
             _instance = this;
-        }
+        }        
+    }
 
+    private void Start() {
         calculateMaxNumOfLines();
         createInitialGrid();
     }
@@ -39,7 +41,6 @@ public class GridManager : MonoBehaviour
         for (int i=0; i<maxLinesPerGrid; i++) {
 
             GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(i), linePrefab.transform.rotation, this.transform);
-            Debug.Log("Entrei aqui");
             line.GetComponent<LineInstance>().ID = lineCounter;
             this.lineList.Add(line);
 
@@ -48,7 +49,6 @@ public class GridManager : MonoBehaviour
 
             lineCounter++;
         }
-
     }
 
     private void calculateMaxNumOfLines() {
@@ -94,7 +94,17 @@ public class GridManager : MonoBehaviour
         Destroy(line);
     }
 
-    // -------- Funções de acesso a grid inicial -----------
+    // -------- Funções de acesso a grid -----------
+
+    public List<GameObject> GetAllLines() {
+
+        if (lineList.Count > 0)
+            return lineList;
+        else
+            Debug.LogError("Linha não tem elementos");
+
+        return null;
+    }
 
     public GameObject GetLine(int index) {
 

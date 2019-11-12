@@ -22,8 +22,8 @@ public class CameraFollowPlayer : MonoBehaviour
     void FixedUpdate()
     {
         if (target)
-        {
-            if (PlayerMovimentation.Instance.Started)
+        { 
+            if (target.GetComponent<PlayerMovimentation>().Started)
             {
                 Vector3 posNoZ = transform.position;
                 posNoZ.z = target.transform.position.z;
