@@ -83,6 +83,25 @@ public class PlayerMovimentation: MonoBehaviour {
             minDist = Mathf.Infinity;
         }
 
+        // Verifica se não é uma linha deslocada com 3 possibilidades
+        // Avalia se tem algum nó com distancia igual (simetrico nas laterais = 3)
+        allNodesInLine = line.GetComponent<LineInstance>().getNodeList();
+
+        // Compara a distancia de cada nó escolhido como próximo
+        foreach(GameObject node in allNodesInLine) {
+            foreach (GameObject nodeClose in closestNodes) {
+                float distClose = Vector3.Distance(nodeClose.transform.position, currentPos);
+                float dist = Vector3.Distance(node.transform.position, currentPos);
+
+                if (distClose == dist && node != nodeClose) {
+                    closestNodes.Add(node);
+                    break;
+                }
+            }
+
+            if (closestNodes.Count == 3) break;
+        }
+
         return closestNodes;
     }
 
@@ -92,9 +111,8 @@ public class PlayerMovimentation: MonoBehaviour {
     // Adiciona uma nova linha na grid para que player ande
     // Chamado pelo Tap
     public void MovePlayer(GameObject node) {
-
         changePlayerNode(node);
-        GridManager.Instance.AddLineInGrid();
+        GridManager.Instance.AddLineInGrid(node);
     }
 
     private void changePlayerNode(GameObject newNode) {

@@ -452,5 +452,10 @@ PrefabInstance:
       propertyPath: initialNode
       value: 
       objectReference: {fileID: 578686507}
+    - target: {fileID: 8632541265069312418, guid: 784f4c85da3867b47b7b77e7374a8b67,
+        type: 3}
+      propertyPath: maxLinesPerGrid
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784f4c85da3867b47b7b77e7374a8b67, type: 3}

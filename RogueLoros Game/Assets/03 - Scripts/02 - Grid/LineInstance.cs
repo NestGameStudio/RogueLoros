@@ -54,40 +54,33 @@ public class LineInstance : MonoBehaviour
 
         Vector3 linePos;
 
-        Debug.Log("ID - " + ID);
-
-        // Verifica se a linha é par
-        if (ID % 2 == 0) {
-
-            Debug.Log("Linha é par - " + ID);
+        // quantidade de nodes por linha é par
+        if (maxNodesInLine % 2 == 0) {
 
             if (i % 2 == 0) {   // dispôe os blocos pares a direita e os impares à esquerda
 
-                // Se o index é 2 ele passa a ser 1 e fica ao lado do item 0
                 int index = 0;
                 if (i > 0)
-                    index = i - i/2;
+                    index = i - i / 2;
 
-                linePos = new Vector3((nodeSize + offSetBetweenNodes) / 2 + (nodeSize + offSetBetweenNodes) * index, 0, 0);
-            }else {
+                linePos = new Vector3((nodeSize + offSetBetweenNodes)/2 + (nodeSize + offSetBetweenNodes) * index, 0, 0);
+            } else {
 
-                // Se o index é 3 ele passa a ser 2 e fica ao lado do item 0
                 int index = 1;
                 if (i > 1)
-                    index = i - (i/2);
+                    index = i - (i / 2);
 
-                linePos = new Vector3((nodeSize + offSetBetweenNodes) / 2 + (nodeSize + offSetBetweenNodes) * -index, 0, 0);
+                linePos = new Vector3((nodeSize + offSetBetweenNodes)/2 + (nodeSize + offSetBetweenNodes) * -index, 0, 0);
             }
 
+        // Quantidade de nodes por linha é ímpar
         } else {
-
-            Debug.Log("Linha é impar");
 
             if (i % 2 == 0) {   // dispôe os blocos pares a direita e os impares à esquerda
 
                 int index = 0;
                 if (i > 0)
-                    index = i - i/2;
+                    index = i - i / 2;
 
                 linePos = new Vector3((nodeSize + offSetBetweenNodes) * index, 0, 0);
             } else {
@@ -98,14 +91,12 @@ public class LineInstance : MonoBehaviour
 
                 linePos = new Vector3((nodeSize + offSetBetweenNodes) * -index, 0, 0);
             }
-        }
 
-        //Vector3 lineWorldPos = Camera.main.ScreenToWorldPoint(linePos);
+        }
 
         linePos = this.transform.TransformPoint(linePos);
 
         return linePos;
-
     }
 
 }

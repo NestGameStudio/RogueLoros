@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  maxNodesInLine: 7
+  maxNodesInLine: 9
   nodePrefab: {fileID: 7329819433191029454, guid: 1652ff20262fd9e4a94bce2da8f650da,
     type: 3}
   offSetBetweenNodes: 2
