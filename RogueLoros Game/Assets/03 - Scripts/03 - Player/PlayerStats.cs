@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class PlayerStats : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int PontoDeVida = 100;
+
+    public int PontoDeAtaqueMin = 0;
+    public int PontoDeAtaqueMaxn = 3;
+
+    public int PontoDeFeiticoMin = 0;
+    public int PontoDeFeiticoMax = 5;
+
+    public int QuantidadeDeGemas = 0;
+
+    public int PontosDeExperiencia = 0;
+
+    // Strech
+    //public int ContadorDeChave = 0;
+
 }

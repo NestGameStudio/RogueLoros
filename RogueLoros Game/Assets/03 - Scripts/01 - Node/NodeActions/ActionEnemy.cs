@@ -7,7 +7,7 @@ public class ActionEnemy : NodeAction
     public override void DoAction() {
         base.DoAction();
 
-        Debug.Log("Perde vida");
+        Debug.Log("Combate");
     }
 
     public override void EndAction() {

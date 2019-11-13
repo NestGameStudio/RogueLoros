@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 408162647767286860}
   - component: {fileID: 8855927698667826360}
   - component: {fileID: 1638933227}
+  - component: {fileID: 5219104587767113947}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -95,3 +96,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialNode: {fileID: 0}
   Started: 1
+--- !u!114 &5219104587767113947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97c2603e26914d9d93d8c1fa16e2037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PontoDeVida: 100
+  PontoDeAtaqueMin: 0
+  PontoDeAtaqueMaxn: 3
+  PontoDeFeiticoMin: 0
+  PontoDeFeiticoMax: 5
+  QuantidadeDeGemas: 0
+  PontosDeExperiencia: 0
