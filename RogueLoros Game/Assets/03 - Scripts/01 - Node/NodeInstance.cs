@@ -11,6 +11,7 @@ public class NodeInstance : MonoBehaviour
     public bool canWalkInThisNode = false;
 
     public Shader lineShader;
+    public GameObject line; 
 
     private List<GameObject> lines = new List<GameObject>();
 
@@ -26,13 +27,13 @@ public class NodeInstance : MonoBehaviour
 
     public void DrawLine(Vector3 end) {
 
-        GameObject myLine = new GameObject();
+        GameObject myLine = Instantiate(line);
         myLine.transform.position = this.transform.position;
-        myLine.AddComponent<LineRenderer>();
+        //myLine.AddComponent<LineRenderer>();
         LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(lineShader);
-        lr.SetColors(Color.magenta, Color.blue);
-        lr.SetWidth(0.1f, 0.1f);
+        //lr.material = new Material(lineShader);
+        //lr.SetColors(Color.magenta, Color.blue);
+        //lr.SetWidth(0.1f, 0.1f);
         lr.SetPosition(0, this.transform.position);
         lr.SetPosition(1, end);
         lr.gameObject.layer = LayerMask.NameToLayer("LineRenderer");

@@ -139,3 +139,4 @@ MonoBehaviour:
   - {fileID: 828593335800045982, guid: e450a38a3c6462349a86222558415572, type: 3}
   canWalkInThisNode: 0
   lineShader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
+  line: {fileID: 1749650447129118191, guid: cd56e203317d8c34eb1b196c840c1c68, type: 3}
