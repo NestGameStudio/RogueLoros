@@ -31,7 +31,7 @@ public class Tap : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode)
             {
                 this.GetComponent<NodeAction>().DoAction();
-
+                gameObject.gameObject.GetComponent<Animator>().SetTrigger("Tap");
                 PlayerMovimentation playerMov = PlayerMovimentation.Instance;
                 playerMov.MovePlayer(this.gameObject);
                 playerMov.allowNextMovimentation();
