@@ -32,6 +32,10 @@ public class PlayerInstance: MonoBehaviour
         HP = this.GetComponent<HealthPoints>();
         MP = this.GetComponent<MagicPoints>();
         AP = this.GetComponent<AttackPoints>();
+
+        HP.LoadStat();
+        MP.LoadStat();
+        AP.LoadStat();
     }
 
     // Update is called once per frame

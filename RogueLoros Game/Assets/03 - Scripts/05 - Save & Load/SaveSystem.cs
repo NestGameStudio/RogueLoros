@@ -12,6 +12,8 @@ public static class SaveSystem {
 
         SaveData data = new SaveData(player);
 
+        Debug.Log("Save " + data.HealthLevel);
+
         formatter.Serialize(stream, data);
         stream.Close();
     }

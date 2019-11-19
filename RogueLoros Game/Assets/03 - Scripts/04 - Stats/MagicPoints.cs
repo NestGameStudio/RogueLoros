@@ -20,8 +20,6 @@ public class MagicPoints : Stats
     public override void LoadStat() {
         base.LoadStat();
 
-        SaveData data = SaveSystem.LoadData();
-
         if (data != null) {
 
             int levelLimit = data.MagicLevel - currentLevel;

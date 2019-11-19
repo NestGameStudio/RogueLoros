@@ -20,8 +20,6 @@ public class HealthPoints: Stats {
     public override void LoadStat() {
         base.LoadStat();
 
-        SaveData data = SaveSystem.LoadData();
-
         if (data != null) {
 
             int levelLimit = data.HealthLevel - currentLevel;

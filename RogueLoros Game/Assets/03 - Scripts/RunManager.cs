@@ -10,9 +10,5 @@ public class RunManager : MonoBehaviour
         SaveSystem.SaveData(PlayerInstance.Instance);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        PlayerInstance.Instance.HP.LoadStat();
-        PlayerInstance.Instance.MP.LoadStat();
-        PlayerInstance.Instance.AP.LoadStat();
     }
 }
