@@ -41,6 +41,8 @@ public class PlayerInstance: MonoBehaviour
         AP.LoadStat();
 
         ExperienceManager.Instance.LoadXP();
+
+        ExperienceManager.Instance.UpdateUI();
     }
 
     // Update is called once per frame
@@ -48,12 +50,12 @@ public class PlayerInstance: MonoBehaviour
 
         if (Input.GetKey(KeyCode.F)) {
             // Player morreu
-            ExperienceManager.Instance.DisplayUIStats();
+            RunManager.Instance.LoseRun();
         }
 
         if (Input.GetKey(KeyCode.R)) {
             // Reseta o save
-            SaveSystem.ClearData();
+            RunManager.Instance.cleanSave = true;
         }
         
     }

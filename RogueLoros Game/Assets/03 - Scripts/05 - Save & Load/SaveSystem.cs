@@ -23,10 +23,6 @@ public static class SaveSystem {
         FileStream stream = new FileStream(path, FileMode.Create);
 
         SaveData data = new SaveData();
-        data.HealthLevel = 1;
-        data.MagicLevel = 1;
-        data.AttackLevel = 1;
-        data.XP = 0;
 
         formatter.Serialize(stream, data);
         stream.Close();

@@ -21,6 +21,12 @@ public class ExperienceManager: MonoBehaviour
 
     #endregion
 
+    public Text XPLabel;
+    public Text AttackLabel;
+    public Text MagicLabel;
+    public Text MoneyLabel;
+    public Slider HealthSlider;
+
     public GameObject PlayerStatsUI;
 
     public Button HPLevelUp;
@@ -58,6 +64,18 @@ public class ExperienceManager: MonoBehaviour
 
         updateLevelUpPanelLabels();
         checkIfXPLevelUpButtonIsInteractabel();
+    }
+
+    // Chamado quando faz level up ou a vida/XP aumenta ou abaixa 
+    public void UpdateUI() {
+
+        XPLabel.text = currentXP.ToString();
+        AttackLabel.text = PlayerInstance.Instance.AP.GetMinPossibleAttackRange().ToString() + "-" + PlayerInstance.Instance.AP.GetMaxPossibleAttackRange().ToString();
+        MagicLabel.text = PlayerInstance.Instance.MP.GetMinPossibleMagicRange().ToString() + "-" + PlayerInstance.Instance.MP.GetMaxPossibleMagicRange().ToString();
+        MoneyLabel.text = "0";
+        if (HealthSlider)
+            HealthSlider.value = PlayerInstance.Instance.HP.GetCurrentLife() * 100 / PlayerInstance.Instance.HP.GetMaxPossibleLife();
+
     }
 
     private void updateLevelUpPanelLabels() {
@@ -113,16 +131,23 @@ public class ExperienceManager: MonoBehaviour
         stat.IncreaseLevel();
 
         DisplayUIStats();
+        UpdateUI();
     }
 
     private void DecreaseXPPoints(int value) {
 
         currentXP -= value;
         XPPointsLabel.text = currentXP.ToString();
+
+        UpdateUI();
     }
 
     public void IncreaseXPPoints(int value) {
+        Debug.Log(currentXP + " XP");
+
         currentXP += value;
+
+        UpdateUI();
     }
 
     public int GetXPPoints() {

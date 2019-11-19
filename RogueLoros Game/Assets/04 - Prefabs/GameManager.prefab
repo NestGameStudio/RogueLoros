@@ -44,6 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce18c7b9f124fa4ea07ddad4ceea821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XPLabel: {fileID: 0}
+  AttackLabel: {fileID: 0}
+  MagicLabel: {fileID: 0}
+  MoneyLabel: {fileID: 0}
+  HealthSlider: {fileID: 0}
   PlayerStatsUI: {fileID: 0}
   HPLevelUp: {fileID: 0}
   HPValueLabel: {fileID: 0}

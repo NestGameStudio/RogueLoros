@@ -46,6 +46,34 @@ public class HealthPoints: Stats {
         return MaxValueInLevel;
     }
 
+    public void IncreaseLifePoints(int value) {
+
+        if (currentValue < MaxValueInLevel) {
+            currentValue += value;
+
+            // verifica se a vida não aumentou mais que o normal possivel
+            if (currentValue > MaxValueInLevel) {
+                currentValue = MaxValueInLevel;
+            }
+        }
+        ExperienceManager.Instance.UpdateUI();
+    }
+
+    public void DecreaseLifePoints(int value) {
+
+        if (currentValue > 0) {
+            currentValue -= value;
+
+            // verifica se a vida não aumentou mais que o normal possivel
+            if (currentValue <= 0) {
+                currentValue = 0;
+                RunManager.Instance.LoseRun();
+            }
+        }
+
+        ExperienceManager.Instance.UpdateUI();
+    }
+
     // -------- Funções relativas aos inimigos -----------
 
     // Para cada inimigo o valor de vida inicial depende da dificuldade 
