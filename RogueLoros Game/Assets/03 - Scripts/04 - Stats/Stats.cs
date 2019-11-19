@@ -18,13 +18,9 @@ public class Stats: MonoBehaviour {
     // Sempre diminuir 1 quando for olhar a lista com essa variável
     [HideInInspector] public int currentLevel = 1;
 
-    [HideInInspector] public SaveData data;
-
     // -------- Funções relativas ao load de jogo -----------
 
-    virtual public void LoadStat() {
-        data = SaveSystem.LoadData();
-    }
+    virtual public void LoadStat() { }
 
     virtual public void IncreaseLevel() {
         if (currentLevel < LevelCap.Count) {

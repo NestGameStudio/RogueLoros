@@ -26,6 +26,7 @@ public class PlayerInstance: MonoBehaviour
     [HideInInspector] public MagicPoints MP;
     [HideInInspector] public AttackPoints AP;
 
+    [HideInInspector] public SaveData Data;
 
     // Start is called before the first frame update
     void Start() {
@@ -33,9 +34,13 @@ public class PlayerInstance: MonoBehaviour
         MP = this.GetComponent<MagicPoints>();
         AP = this.GetComponent<AttackPoints>();
 
+        Data = SaveSystem.LoadData();
+
         HP.LoadStat();
         MP.LoadStat();
         AP.LoadStat();
+
+        ExperienceManager.Instance.LoadXP();
     }
 
     // Update is called once per frame
