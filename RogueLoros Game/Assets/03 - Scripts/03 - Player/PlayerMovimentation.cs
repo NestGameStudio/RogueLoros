@@ -51,6 +51,8 @@ public class PlayerMovimentation: MonoBehaviour {
         foreach (GameObject node in currentPossibleNodes) {
             node.GetComponent<NodeInstance>().canWalkInThisNode = true;
             currentNode.GetComponent<NodeInstance>().DrawLine(node.transform.position);
+            //node.GetComponentInChildren<SpriteRenderer>().color = new Color32(65,59,57,255);
+            node.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255, 255);
         }
     }
 
