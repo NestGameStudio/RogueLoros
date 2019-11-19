@@ -35,6 +35,7 @@ public class NodeInstance : MonoBehaviour
         lr.SetWidth(0.1f, 0.1f);
         lr.SetPosition(0, this.transform.position);
         lr.SetPosition(1, end);
+        lr.gameObject.layer = LayerMask.NameToLayer("LineRenderer");
         lines.Add(myLine);
     }
 

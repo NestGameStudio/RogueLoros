@@ -8,6 +8,8 @@ public class ActionEnemy : NodeAction
         base.DoAction();
 
         Debug.Log("Combate");
+        ExperienceManager.Instance.IncreaseXPPoints(100);
+
     }
 
     public override void EndAction() {

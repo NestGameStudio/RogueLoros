@@ -11,7 +11,13 @@ GameObject:
   - component: {fileID: 408162647767286860}
   - component: {fileID: 8855927698667826360}
   - component: {fileID: 1638933227}
-  - component: {fileID: 5219104587767113947}
+  - component: {fileID: 6551414249264253119}
+  - component: {fileID: 6721177775664572811}
+  - component: {fileID: 1776643457622512121}
+  - component: {fileID: 185942029575317473}
+  - component: {fileID: 213467745}
+  - component: {fileID: 213467746}
+  - component: {fileID: 213467747}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -96,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialNode: {fileID: 0}
   Started: 1
---- !u!114 &5219104587767113947
+--- !u!114 &6551414249264253119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,13 +111,113 @@ MonoBehaviour:
   m_GameObject: {fileID: 788633976954086466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97c2603e26914d9d93d8c1fa16e2037, type: 3}
+  m_Script: {fileID: 11500000, guid: 96070c674c1e5954c9ddac7170b74e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PontoDeVida: 100
-  PontoDeAtaqueMin: 0
-  PontoDeAtaqueMaxn: 3
-  PontoDeFeiticoMin: 0
-  PontoDeFeiticoMax: 5
-  QuantidadeDeGemas: 0
-  PontosDeExperiencia: 0
+  HP: {fileID: 0}
+  MP: {fileID: 0}
+  AP: {fileID: 0}
+--- !u!114 &6721177775664572811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd7f1565b01f4a568c66976e333dfa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelCap: f401000058020000bc0200002003000084030000
+  currentLevel: 1
+  LinearHPMaxValueIncreasePerLevel: 1
+  MaxValueInLevel: 3
+--- !u!114 &1776643457622512121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db85f6f0c20394783684bc7955ad06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelCap: f401000058020000bc0200002003000084030000
+  currentLevel: 1
+  LinearAPMagnitudeUpgrade: 1
+  LinearAPAmplitudeUpgrade: 2
+  MaxValueInLevel: 2
+  MinValueInLevel: 1
+--- !u!114 &185942029575317473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a59e06073dbce4a9ef4ef775c7889f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelCap: f401000058020000bc0200002003000084030000
+  currentLevel: 1
+  LinearMPMagnitudeUpgrade: 1
+  LinearMPAmplitudeUpgrade: 2
+  MaxValueInLevel: 2
+  MinValueInLevel: 1
+--- !u!114 &213467745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd7f1565b01f4a568c66976e333dfa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelCap: f401000058020000bc0200002003000084030000
+  currentLevel: 1
+  LinearHPMaxValueIncreasePerLevel: 1
+  MaxValueInLevel: 3
+--- !u!114 &213467746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db85f6f0c20394783684bc7955ad06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelCap: f401000058020000bc0200002003000084030000
+  currentLevel: 1
+  LinearAPMagnitudeUpgrade: 1
+  LinearAPAmplitudeUpgrade: 2
+  MaxValueInLevel: 2
+  MinValueInLevel: 1
+--- !u!114 &213467747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788633976954086466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a59e06073dbce4a9ef4ef775c7889f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelCap: f401000058020000bc0200002003000084030000
+  currentLevel: 1
+  LinearMPMagnitudeUpgrade: 1
+  LinearMPAmplitudeUpgrade: 2
+  MaxValueInLevel: 2
+  MinValueInLevel: 1
