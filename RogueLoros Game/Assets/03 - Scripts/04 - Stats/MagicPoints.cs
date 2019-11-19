@@ -20,9 +20,9 @@ public class MagicPoints : Stats
     public override void LoadStat() {
         base.LoadStat();
 
-        if (data != null) {
+        if (PlayerInstance.Instance.Data != null) {
 
-            int levelLimit = data.MagicLevel - currentLevel;
+            int levelLimit = PlayerInstance.Instance.Data.MagicLevel - currentLevel;
 
             for (int i = 0; i < levelLimit; i++) {
                 IncreaseLevel();

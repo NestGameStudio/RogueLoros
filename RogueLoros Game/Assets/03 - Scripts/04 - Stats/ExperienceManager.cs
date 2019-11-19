@@ -39,6 +39,16 @@ public class ExperienceManager: MonoBehaviour
 
     private int currentXP = 0;
 
+    // -------- Funções relativas ao load de jogo -----------
+
+    public void LoadXP() {
+
+        if (PlayerInstance.Instance.Data != null) {
+            Debug.Log(PlayerInstance.Instance.Data.XP);
+            currentXP = PlayerInstance.Instance.Data.XP;
+        }
+    }
+
     // -------- Funções relativas a UI de Level UP -----------
 
     public void DisplayUIStats() {
@@ -113,6 +123,10 @@ public class ExperienceManager: MonoBehaviour
 
     public void IncreaseXPPoints(int value) {
         currentXP += value;
+    }
+
+    public int GetXPPoints() {
+        return currentXP;
     }
 
 }

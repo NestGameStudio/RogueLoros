@@ -20,9 +20,9 @@ public class HealthPoints: Stats {
     public override void LoadStat() {
         base.LoadStat();
 
-        if (data != null) {
+        if (PlayerInstance.Instance.Data != null) {
 
-            int levelLimit = data.HealthLevel - currentLevel;
+            int levelLimit = PlayerInstance.Instance.Data.HealthLevel - currentLevel;
 
             for (int i = 0; i < levelLimit; i++) {
                 IncreaseLevel();
