@@ -1931,6 +1931,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417194839}
   m_CullTransparentMesh: 0
+--- !u!114 &1650861052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 115776615281381695, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7747808859308729460}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1689605178
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,6 +3048,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1252295072023923650, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252295072023923650, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ce4c3f7ef70a45498f93e72c8085fe5, type: 3}
 --- !u!1001 &7845886951135282745
@@ -3050,6 +3072,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: XPLabel
+      value: 
+      objectReference: {fileID: 2138415786}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: AttackLabel
+      value: 
+      objectReference: {fileID: 2084310143}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: MagicLabel
+      value: 
+      objectReference: {fileID: 1397176824}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: MoneyLabel
+      value: 
+      objectReference: {fileID: 86833090}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: HealthSlider
+      value: 
+      objectReference: {fileID: 1650861052}
     - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
         type: 3}
       propertyPath: PlayerStatsUI
@@ -3105,26 +3152,6 @@ PrefabInstance:
       propertyPath: XPPointsLabel
       value: 
       objectReference: {fileID: 477750679}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: XPLabel
-      value: 
-      objectReference: {fileID: 2138415786}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: MoneyLabel
-      value: 
-      objectReference: {fileID: 86833090}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: AttackLabel
-      value: 
-      objectReference: {fileID: 2084310143}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: MagicLabel
-      value: 
-      objectReference: {fileID: 1397176824}
     - target: {fileID: 7845886951485788751, guid: 85050938c940b2a41aaefcc1909630e6,
         type: 3}
       propertyPath: m_LocalPosition.x
