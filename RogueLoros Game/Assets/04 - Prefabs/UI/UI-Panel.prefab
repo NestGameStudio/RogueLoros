@@ -388,7 +388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -70.5, y: -6.9}
-  m_SizeDelta: {x: 186.1, y: 97.2}
+  m_SizeDelta: {x: 141.05, y: 97.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7747808859039757136
 CanvasRenderer:
@@ -422,9 +422,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c28158136e285614895a67da20317fd4, type: 3}
     m_FontSize: 74
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 105
+    m_BestFit: 1
+    m_MinSize: 50
+    m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1620,7 +1620,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -70.5, y: -6.9}
-  m_SizeDelta: {x: 186.1, y: 97.2}
+  m_SizeDelta: {x: 141.05, y: 97.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7747808860736167886
 CanvasRenderer:
@@ -1654,9 +1654,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c28158136e285614895a67da20317fd4, type: 3}
     m_FontSize: 74
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 105
+    m_BestFit: 1
+    m_MinSize: 50
+    m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
