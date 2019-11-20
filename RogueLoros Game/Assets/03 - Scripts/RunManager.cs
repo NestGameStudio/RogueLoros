@@ -36,6 +36,8 @@ public class RunManager : MonoBehaviour
     }
 
     public void LoseRun() {
+
+        Debug.Log(ExperienceManager.Instance.GetXPPoints() + " XP CURRENT");
         ExperienceManager.Instance.DisplayUIStats();
     }
 

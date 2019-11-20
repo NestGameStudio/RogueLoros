@@ -3052,6 +3052,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
         type: 3}
+      propertyPath: XPLabel
+      value: 
+      objectReference: {fileID: 2138415786}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: AttackLabel
+      value: 
+      objectReference: {fileID: 2084310143}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: MagicLabel
+      value: 
+      objectReference: {fileID: 1397176824}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
+      propertyPath: MoneyLabel
+      value: 
+      objectReference: {fileID: 86833090}
+    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
+        type: 3}
       propertyPath: PlayerStatsUI
       value: 
       objectReference: {fileID: 910815904}
@@ -3105,26 +3125,6 @@ PrefabInstance:
       propertyPath: XPPointsLabel
       value: 
       objectReference: {fileID: 477750679}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: XPLabel
-      value: 
-      objectReference: {fileID: 2138415786}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: MoneyLabel
-      value: 
-      objectReference: {fileID: 86833090}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: AttackLabel
-      value: 
-      objectReference: {fileID: 2084310143}
-    - target: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: MagicLabel
-      value: 
-      objectReference: {fileID: 1397176824}
     - target: {fileID: 7845886951485788751, guid: 85050938c940b2a41aaefcc1909630e6,
         type: 3}
       propertyPath: m_LocalPosition.x
