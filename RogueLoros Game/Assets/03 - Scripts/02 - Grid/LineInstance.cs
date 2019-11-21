@@ -12,10 +12,13 @@ public class LineInstance : MonoBehaviour
 
     public float offSetBetweenNodes = 1.5f;
 
+    [HideInInspector] public bool isBoss = false;
+
     private List<GameObject> nodeList = new List<GameObject>();
     private float nodeSize;
 
     private void Start() {
+
         createNodeList();
     }
 
@@ -28,14 +31,28 @@ public class LineInstance : MonoBehaviour
     // Cria uma lista de nodes para a linha
     private void createNodeList() {
 
-        for (int i=0; i<maxNodesInLine; i++) {
+        if (!isBoss) {
 
-            GameObject nodeType = nodePrefab.GetComponent<NodeInstance>().RandomizeType();
-            GameObject node = Instantiate(nodeType, calculatePostitionInWorld(i), nodePrefab.transform.rotation, this.transform);      // cria uma copia do prefab
+            for (int i = 0; i < maxNodesInLine; i++) {
 
-            // adiciona o node à lista de nodes da linha
-            nodeList.Add(node);
+                GameObject nodeType = nodePrefab.GetComponent<NodeInstance>().RandomizeType();
+                GameObject node = Instantiate(nodeType, calculatePostitionInWorld(i), nodePrefab.transform.rotation, this.transform);      // cria uma copia do prefab
+
+                // adiciona o node à lista de nodes da linha
+                nodeList.Add(node);
+            }
+
+        } else {
+
+            GameObject nodeType = nodePrefab.GetComponent<NodeInstance>().BossNode();
+            if(nodeType != null) {
+                GameObject node = Instantiate(nodeType, calculatePostitionInWorld(0), nodePrefab.transform.rotation, this.transform);      // cria uma copia do prefab
+
+                // adiciona o node à lista de nodes da linha
+                nodeList.Add(node);
+            }
         }
+        
     }
 
     private void calculateMaxNumOfLines() {

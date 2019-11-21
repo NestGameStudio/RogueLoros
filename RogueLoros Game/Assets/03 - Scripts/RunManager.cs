@@ -22,7 +22,7 @@ public class RunManager : MonoBehaviour
 
     #endregion
 
-    public bool cleanSave = false;
+    [HideInInspector] public bool cleanSave = false;
 
     public void ResetRun() {
 
@@ -37,8 +37,15 @@ public class RunManager : MonoBehaviour
 
     public void LoseRun() {
 
-        Debug.Log(ExperienceManager.Instance.GetXPPoints() + " XP CURRENT");
         ExperienceManager.Instance.DisplayUIStats();
     }
+
+    public void WinRun() {
+
+        Debug.Log("Derrotou o boss, venceu a run");
+        // O que acontece depois daqui?
+        ExperienceManager.Instance.DisplayUIStats();
+    }
+
 
 }

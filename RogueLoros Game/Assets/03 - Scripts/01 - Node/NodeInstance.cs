@@ -23,6 +23,16 @@ public class NodeInstance : MonoBehaviour
         return NodeTypes[rand];
     }
 
+    public GameObject BossNode() {
+
+        foreach(GameObject node in NodeTypes) {
+            if (node.CompareTag("Boss")) {
+                return node;
+            }
+        }
+        return null;
+    }
+
     // -------- Funções responsaveis em gerar os caminhos -----------
 
     public void DrawLine(Vector3 end) {

@@ -34,6 +34,8 @@ public class Tap : MonoBehaviour
                 gameObject.gameObject.GetComponent<Animator>().SetTrigger("Tap");
                 PlayerMovimentation playerMov = PlayerMovimentation.Instance;
                 playerMov.MovePlayer(this.gameObject);
+
+                // Rever aqui, quando for inimigo não rola, quando for boss tbm não rola
                 playerMov.allowNextMovimentation();
             }
         }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7845886951485788751}
   - component: {fileID: 7845886951485788748}
+  - component: {fileID: 4195548706380453673}
   - component: {fileID: 2077899213715079093}
   m_Layer: 0
   m_Name: GameManager
@@ -60,6 +61,19 @@ MonoBehaviour:
   APValueLabel: {fileID: 0}
   APNextLevelXPLabel: {fileID: 0}
   XPPointsLabel: {fileID: 0}
+--- !u!114 &4195548706380453673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845886951485788749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcffbfd47f367a449b86b0b297116f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunLines: 1e000000320000005000000064000000
 --- !u!114 &2077899213715079093
 MonoBehaviour:
   m_ObjectHideFlags: 0

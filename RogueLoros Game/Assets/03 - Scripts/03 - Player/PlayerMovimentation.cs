@@ -45,6 +45,8 @@ public class PlayerMovimentation: MonoBehaviour {
     // Pega os dois nodes mais proximos do player e ativa a possibilidade de dar tap nele
     public void allowNextMovimentation()
     {
+        // Se a proxima linha for a do boss, puxar o boss pra perto do player
+
         GameObject nextLine = GridManager.Instance.GetLine(nextLineToMove);
         currentPossibleNodes = GetClosestNodes(nextLine);
 
@@ -56,6 +58,7 @@ public class PlayerMovimentation: MonoBehaviour {
         }
     }
 
+    // Modificar isso para o caso do boss (só tem 1 opção)
     // Pega os dois nodes mais proximos do player
     List<GameObject> GetClosestNodes(GameObject line)
     {

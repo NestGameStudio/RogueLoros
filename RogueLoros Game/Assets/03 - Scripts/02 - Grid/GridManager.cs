@@ -22,6 +22,8 @@ public class GridManager : MonoBehaviour
     private int lineCounter = 0;
     private int removedLineCounter = 0;
 
+    private int maxLineInRun = 10;
+
     private void Awake() {
         if (_instance != null && _instance != this) {
             Destroy(this.gameObject);
@@ -33,6 +35,8 @@ public class GridManager : MonoBehaviour
     private void Start() {
         calculateMaxNumOfLines();
         createInitialGrid();
+
+        maxLineInRun = DifficultyManager.Instance.RunLines[DifficultyManager.Instance.GetCurrentRun()];
     }
 
     // -------- Funções relativas a criar a grid inicial -----------
@@ -82,20 +86,27 @@ public class GridManager : MonoBehaviour
 
     // -------- Funções relativas a manutencao da grid inicial -----------
 
-    public void AddLineInGrid(GameObject currentNode)
-    {
-        GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
-        line.GetComponent<LineInstance>().ID = lineCounter;
-        this.lineList.Add(line);
+    public void AddLineInGrid(GameObject currentNode) {
 
-        List<GameObject> nodeLineList = line.GetComponent<LineInstance>().getNodeList();
-        this.nodeList.Add(nodeLineList);
+        if (lineCounter < maxLineInRun) {
+            GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+            line.GetComponent<LineInstance>().ID = lineCounter;
+            this.lineList.Add(line);
 
-        lineCounter++;
+            List<GameObject> nodeLineList = line.GetComponent<LineInstance>().getNodeList();
+            this.nodeList.Add(nodeLineList);
 
-        if (lineCounter > maxLinesPerGrid) {
-            RemoveLineInGrid(GetLine(lineCounter - maxLinesPerGrid -1));
-        }
+            lineCounter++;
+
+            if (lineCounter > maxLinesPerGrid) {
+                RemoveLineInGrid(GetLine(lineCounter - maxLinesPerGrid - 1));
+            }
+            
+        } else if (lineCounter == maxLineInRun) {
+
+            GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+            // Cria o Boss
+        } 
     }
 
     public void RemoveLineInGrid(GameObject line)
@@ -104,7 +115,7 @@ public class GridManager : MonoBehaviour
         this.nodeList.Remove(line.GetComponent<LineInstance>().getNodeList());
 
         Destroy(line);
-
+        
         removedLineCounter++;
     }
 
