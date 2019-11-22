@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 48
+  m_AssetsPPU: 49
   m_RefResolutionX: 270
   m_RefResolutionY: 480
   m_UpscaleRT: 1
@@ -3047,26 +3047,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747808859039757141, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -70.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747808859039757141, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 141.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747808860736167875, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -70.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7747808860736167875, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 141.05
       objectReference: {fileID: 0}
     - target: {fileID: 1252295072023923650, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
         type: 3}
