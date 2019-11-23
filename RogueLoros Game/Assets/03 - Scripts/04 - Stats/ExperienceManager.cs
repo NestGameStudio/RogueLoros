@@ -50,7 +50,7 @@ public class ExperienceManager: MonoBehaviour
     public void LoadXP() {
 
         if (PlayerInstance.Instance.Data != null) {
-            Debug.Log(PlayerInstance.Instance.Data.XP);
+            //Debug.Log(PlayerInstance.Instance.Data.XP);
             currentXP = PlayerInstance.Instance.Data.XP;
         }
     }
@@ -143,7 +143,7 @@ public class ExperienceManager: MonoBehaviour
     }
 
     public void IncreaseXPPoints(int value) {
-        Debug.Log(currentXP + " XP");
+        //Debug.Log(currentXP + " XP");
 
         currentXP += value;
 

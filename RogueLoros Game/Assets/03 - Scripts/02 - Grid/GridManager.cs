@@ -88,8 +88,18 @@ public class GridManager : MonoBehaviour
 
     public void AddLineInGrid(GameObject currentNode) {
 
-        if (lineCounter < maxLineInRun) {
-            GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+        if (lineCounter <= maxLineInRun) {
+            GameObject line = null;
+
+            // Node Normal
+            if (lineCounter < maxLineInRun) {
+                line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+
+            // Boss
+            } else if (lineCounter == maxLineInRun) {
+                line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+            }
+
             line.GetComponent<LineInstance>().ID = lineCounter;
             this.lineList.Add(line);
 
@@ -97,15 +107,10 @@ public class GridManager : MonoBehaviour
             this.nodeList.Add(nodeLineList);
 
             lineCounter++;
-
+            
             if (lineCounter > maxLinesPerGrid) {
                 RemoveLineInGrid(GetLine(lineCounter - maxLinesPerGrid - 1));
             }
-            
-        } else if (lineCounter == maxLineInRun) {
-
-            GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
-            // Cria o Boss
         } 
     }
 

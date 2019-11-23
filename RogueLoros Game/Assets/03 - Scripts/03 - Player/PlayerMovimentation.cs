@@ -48,34 +48,60 @@ public class PlayerMovimentation: MonoBehaviour {
         // Se a proxima linha for a do boss, puxar o boss pra perto do player
 
         GameObject nextLine = GridManager.Instance.GetLine(nextLineToMove);
+
+        if (nextLine.GetComponent<LineInstance>().isBoss) {
+            Debug.Log("Chegou no boss");
+            nextLine.GetComponent<LineInstance>().PullBossCloserToPlayer();
+        }
+
         currentPossibleNodes = GetClosestNodes(nextLine);
 
         foreach (GameObject node in currentPossibleNodes) {
             node.GetComponent<NodeInstance>().canWalkInThisNode = true;
             currentNode.GetComponent<NodeInstance>().DrawLine(node.transform.position);
-            //node.GetComponentInChildren<SpriteRenderer>().color = new Color32(65,59,57,255);
             node.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255, 255);
         }
     }
 
     // Modificar isso para o caso do boss (só tem 1 opção)
     // Pega os dois nodes mais proximos do player
-    List<GameObject> GetClosestNodes(GameObject line)
-    {
-        List<GameObject> closestNodes = new List<GameObject>();
+    List<GameObject> GetClosestNodes(GameObject line) {
 
+        List<GameObject> closestNodes = new List<GameObject>();
         List<GameObject> allNodesInLine = line.GetComponent<LineInstance>().getNodeList();
 
         GameObject closestNode = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = transform.position;
 
-        while (closestNodes.Count < 2) {
+        if (!line.GetComponent<LineInstance>().isBoss) {
 
-            foreach(GameObject node in allNodesInLine) {
+            while (closestNodes.Count < 2) {
+
+                foreach (GameObject node in allNodesInLine) {
+                    float dist = Vector3.Distance(node.transform.position, currentPos);
+
+                    if (dist < minDist) {
+                        closestNode = node;
+                        minDist = dist;
+                    }
+                }
+
+                closestNodes.Add(closestNode);
+                allNodesInLine.Remove(closestNode);
+
+                closestNode = null;
+                minDist = Mathf.Infinity;
+            }
+
+        } else {
+
+            foreach (GameObject node in allNodesInLine)
+            {
                 float dist = Vector3.Distance(node.transform.position, currentPos);
 
-                if (dist < minDist) {
+                if (dist < minDist)
+                {
                     closestNode = node;
                     minDist = dist;
                 }
@@ -84,8 +110,6 @@ public class PlayerMovimentation: MonoBehaviour {
             closestNodes.Add(closestNode);
             allNodesInLine.Remove(closestNode);
 
-            closestNode = null;
-            minDist = Mathf.Infinity;
         }
 
         // Verifica se não é uma linha deslocada com 3 possibilidades

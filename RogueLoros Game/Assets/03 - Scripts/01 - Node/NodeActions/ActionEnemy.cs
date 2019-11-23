@@ -16,7 +16,7 @@ public class ActionEnemy : NodeAction
     public override void DoAction() {
         base.DoAction();
         
-        Debug.Log("Combate");
+        //Debug.Log("Combate");
         ExperienceManager.Instance.IncreaseXPPoints(100);
 
     }

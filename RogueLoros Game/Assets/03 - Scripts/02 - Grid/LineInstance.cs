@@ -42,6 +42,7 @@ public class LineInstance : MonoBehaviour
                 nodeList.Add(node);
             }
 
+        // Cria o boss
         } else {
 
             GameObject nodeType = nodePrefab.GetComponent<NodeInstance>().BossNode();
@@ -64,7 +65,6 @@ public class LineInstance : MonoBehaviour
 
         // substituir maxLinesPerGrid = numLinesVertical quando for essa funcao estiver direita
         int numLinesHorizontal = (int) (width / (nodeSize + offSetBetweenNodes));
-        //Debug.Log(numLinesHorizontal);
     }
 
     private Vector3 calculatePostitionInWorld(int i) {
@@ -114,6 +114,11 @@ public class LineInstance : MonoBehaviour
         linePos = this.transform.TransformPoint(linePos);
 
         return linePos;
+    }
+
+
+    public void PullBossCloserToPlayer() {
+        this.transform.position = PlayerInstance.Instance.transform.position;
     }
 
 }

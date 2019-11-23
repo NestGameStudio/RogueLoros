@@ -26,7 +26,7 @@ public class NodeInstance : MonoBehaviour
     public GameObject BossNode() {
 
         foreach(GameObject node in NodeTypes) {
-            if (node.CompareTag("Boss")) {
+            if (node.CompareTag("Enemy")) {
                 return node;
             }
         }
