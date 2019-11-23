@@ -47,6 +47,7 @@ public class GridManager : MonoBehaviour
 
             GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(i, initialNode), linePrefab.transform.rotation, this.transform);
             line.GetComponent<LineInstance>().ID = lineCounter;
+            line.GetComponent<LineInstance>().createNodeList();
             this.lineList.Add(line);
 
             List<GameObject> nodeLineList = line.GetComponent<LineInstance>().getNodeList();
@@ -89,18 +90,15 @@ public class GridManager : MonoBehaviour
     public void AddLineInGrid(GameObject currentNode) {
 
         if (lineCounter <= maxLineInRun) {
-            GameObject line = null;
-
-            // Node Normal
-            if (lineCounter < maxLineInRun) {
-                line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+            GameObject line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform); ;
 
             // Boss
-            } else if (lineCounter == maxLineInRun) {
-                line = Instantiate(linePrefab, calculatePostitionInWorld(lineCounter, currentNode), linePrefab.transform.rotation, this.transform);
+            if (lineCounter == maxLineInRun) {
+                line.GetComponent<LineInstance>().isBoss = true;
             }
 
             line.GetComponent<LineInstance>().ID = lineCounter;
+            line.GetComponent<LineInstance>().createNodeList();
             this.lineList.Add(line);
 
             List<GameObject> nodeLineList = line.GetComponent<LineInstance>().getNodeList();

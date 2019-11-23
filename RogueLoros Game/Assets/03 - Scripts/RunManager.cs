@@ -24,6 +24,9 @@ public class RunManager : MonoBehaviour
 
     [HideInInspector] public bool cleanSave = false;
 
+    // Isso tem que ser carregado no save
+    private int currentRun = 1;
+
     public void ResetRun() {
 
         if (!cleanSave)
@@ -43,6 +46,8 @@ public class RunManager : MonoBehaviour
     public void WinRun() {
 
         Debug.Log("Derrotou o boss, venceu a run");
+
+        currentRun += 1;
         // O que acontece depois daqui?
         ExperienceManager.Instance.DisplayUIStats();
     }

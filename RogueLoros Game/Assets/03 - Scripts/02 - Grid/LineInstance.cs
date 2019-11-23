@@ -19,7 +19,7 @@ public class LineInstance : MonoBehaviour
 
     private void Start() {
 
-        createNodeList();
+        //createNodeList();
     }
 
     // -------- Funções relativas a criar a line -----------
@@ -29,7 +29,7 @@ public class LineInstance : MonoBehaviour
     }
 
     // Cria uma lista de nodes para a linha
-    private void createNodeList() {
+    public void createNodeList() {
 
         if (!isBoss) {
 
@@ -118,7 +118,7 @@ public class LineInstance : MonoBehaviour
 
 
     public void PullBossCloserToPlayer() {
-        this.transform.position = PlayerInstance.Instance.transform.position;
+        this.transform.position = new Vector3(PlayerInstance.Instance.transform.position.x, this.transform.position.y);
     }
 
 }

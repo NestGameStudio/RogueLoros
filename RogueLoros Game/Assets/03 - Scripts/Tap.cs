@@ -36,7 +36,17 @@ public class Tap : MonoBehaviour
                 playerMov.MovePlayer(this.gameObject);
 
                 // Rever aqui, quando for inimigo não rola, quando for boss tbm não rola
-                playerMov.allowNextMovimentation();
+                if (!this.GetComponent<NodeInstance>().isBossNode) {
+
+                    Debug.Log("Cara que");
+                    playerMov.allowNextMovimentation();
+
+                // Esse else tem que estar na action do enemy quando ele é boss
+                } else {
+
+                    Debug.Log("Num sou boss?");
+                    RunManager.Instance.WinRun();
+                }
             }
         }
     }

@@ -10,8 +10,11 @@ public class NodeInstance : MonoBehaviour
     [HideInInspector]
     public bool canWalkInThisNode = false;
 
+    [HideInInspector]
+    public bool isBossNode = false;
+
     public Shader lineShader;
-    public GameObject line; 
+    public GameObject line;
 
     private List<GameObject> lines = new List<GameObject>();
 
@@ -33,12 +36,20 @@ public class NodeInstance : MonoBehaviour
 
         int rand = Random.Range(0, NodeTypes.Count);
         return NodeTypes[rand];
+
+        // Chama a funcao do eneym intance para que ele carregue os dados de um inimigo qualquer
     }
 
     public GameObject BossNode() {
 
+        // Chamaa funcao do Enemy Intance para que ele carregue os dados do boss
+
         foreach(GameObject node in NodeTypes) {
             if (node.CompareTag("Enemy")) {
+
+                Debug.Log("carregou o boss nao foi arrombado?");
+
+                isBossNode = true;
                 return node;
             }
         }

@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d25aac2e26b840d19e11aba300c9b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpVelocity: 10
+  interpVelocity: 150
   minDistance: 2
   followDistance: 10
   target: {fileID: 213467744}

@@ -50,7 +50,6 @@ public class PlayerMovimentation: MonoBehaviour {
         GameObject nextLine = GridManager.Instance.GetLine(nextLineToMove);
 
         if (nextLine.GetComponent<LineInstance>().isBoss) {
-            Debug.Log("Chegou no boss");
             nextLine.GetComponent<LineInstance>().PullBossCloserToPlayer();
         }
 
