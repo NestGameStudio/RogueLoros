@@ -16,7 +16,19 @@ public class NodeInstance : MonoBehaviour
     private List<GameObject> lines = new List<GameObject>();
 
     // -------- Funções responsaveis em criar o node -----------
-
+    public void Update()
+    {
+       
+            if (canWalkInThisNode == false)
+            {
+                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(73, 71, 82, 255);
+            }
+            if (GameObject.FindGameObjectWithTag("Player").transform.position == gameObject.transform.position)
+            {
+                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+            }
+        
+    }
     public GameObject RandomizeType() {
 
         int rand = Random.Range(0, NodeTypes.Count);

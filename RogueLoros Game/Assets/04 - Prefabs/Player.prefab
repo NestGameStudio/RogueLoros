@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 213467747}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,6 +117,11 @@ MonoBehaviour:
   HP: {fileID: 0}
   MP: {fileID: 0}
   AP: {fileID: 0}
+  Data:
+    HealthLevel: 1
+    MagicLevel: 1
+    AttackLevel: 1
+    XP: 0
 --- !u!114 &6721177775664572811
 MonoBehaviour:
   m_ObjectHideFlags: 0
