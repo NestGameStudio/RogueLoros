@@ -8,11 +8,13 @@ public class EnemyInstance : MonoBehaviour
     // Faz os ajustes de dificuldade - poe o inimigo no preset certo dele
 
     // tem uma funcao onde quando é intanciado e é boss, carrega os dados do boss
+    [HideInInspector]
+    public bool isBossNode = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isBossNode = false;
     }
 
     // Update is called once per frame

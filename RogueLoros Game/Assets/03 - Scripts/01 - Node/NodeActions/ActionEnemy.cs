@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyInstance))]
 public class ActionEnemy : NodeAction
 {
     // Qual o esquema aqui, o inimigo são de vários tipos, que tem ataques e vidas diferentes - scoobydoos
@@ -15,6 +16,12 @@ public class ActionEnemy : NodeAction
 
     public override void DoAction() {
         base.DoAction();
+
+        if (this.gameObject.GetComponent<EnemyInstance>().isBossNode) {
+
+            Debug.Log("Chegou no boss");
+            RunManager.Instance.WinRun();
+        }
         
         //Debug.Log("Combate");
         ExperienceManager.Instance.IncreaseXPPoints(100);

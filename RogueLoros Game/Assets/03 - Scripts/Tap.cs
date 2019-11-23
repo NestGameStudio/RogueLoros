@@ -33,20 +33,10 @@ public class Tap : MonoBehaviour
                 this.GetComponent<NodeAction>().DoAction();
                 gameObject.gameObject.GetComponent<Animator>().SetTrigger("Tap");
                 PlayerMovimentation playerMov = PlayerMovimentation.Instance;
+
+                // Espera derrotar o inimigo apara que ele possa andar
                 playerMov.MovePlayer(this.gameObject);
-
-                // Rever aqui, quando for inimigo não rola, quando for boss tbm não rola
-                if (!this.GetComponent<NodeInstance>().isBossNode) {
-
-                    Debug.Log("Cara que");
-                    playerMov.allowNextMovimentation();
-
-                // Esse else tem que estar na action do enemy quando ele é boss
-                } else {
-
-                    Debug.Log("Num sou boss?");
-                    RunManager.Instance.WinRun();
-                }
+                playerMov.allowNextMovimentation();
             }
         }
     }

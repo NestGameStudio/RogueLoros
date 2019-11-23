@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2418432097341596753}
   - component: {fileID: 8803732194423653713}
   - component: {fileID: 4582011608306363074}
+  - component: {fileID: 1659760641785019946}
   - component: {fileID: 3238300151832096677}
   m_Layer: 0
   m_Name: Node
@@ -235,6 +236,19 @@ MonoBehaviour:
   canWalkInThisNode: 0
   lineShader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
   line: {fileID: 1749650447129118191, guid: cd56e203317d8c34eb1b196c840c1c68, type: 3}
+--- !u!114 &1659760641785019946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329819433191029454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bac6e324ff1694ea5f139d55b45373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBossNode: 0
 --- !u!95 &3238300151832096677
 Animator:
   serializedVersion: 3

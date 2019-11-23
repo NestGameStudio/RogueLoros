@@ -10,9 +10,6 @@ public class NodeInstance : MonoBehaviour
     [HideInInspector]
     public bool canWalkInThisNode = false;
 
-    [HideInInspector]
-    public bool isBossNode = false;
-
     public Shader lineShader;
     public GameObject line;
 
@@ -47,9 +44,8 @@ public class NodeInstance : MonoBehaviour
         foreach(GameObject node in NodeTypes) {
             if (node.CompareTag("Enemy")) {
 
-                Debug.Log("carregou o boss nao foi arrombado?");
+                node.GetComponent<EnemyInstance>().isBossNode = true;
 
-                isBossNode = true;
                 return node;
             }
         }
