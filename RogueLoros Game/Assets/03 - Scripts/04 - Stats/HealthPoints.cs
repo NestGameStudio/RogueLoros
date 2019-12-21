@@ -75,12 +75,13 @@ public class HealthPoints: Stats {
             currentValue -= value;
 
             // verifica se a vida não aumentou mais que o normal possivel
-            if (this.GetComponent<PlayerInstance>()) {
-                if (currentValue <= 0) {
-                    currentValue = 0;
+            if (currentValue <= 0) {
+                currentValue = 0;
+                if (this.GetComponent<PlayerInstance>()){
                     RunManager.Instance.LoseRun();
                 }
             }
+            
         }
 
         ExperienceManager.Instance.UpdateUI();
