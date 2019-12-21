@@ -51,7 +51,6 @@ public class ActionEnemy : NodeAction
 
             int dropkey = Random.Range(0, 2);
             if (dropkey == 1) {
-                Debug.Log("GANHEI UMA CHAVE");
                 PlayerInstance.Instance.Keys += 1;
             }
 

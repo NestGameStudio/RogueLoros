@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7879481445315258116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4032668274774422238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e4a3bff575a4847a73fb7546c0106f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &3149974181250409226
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2035660816119730644, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_Name
+      value: SpellSuperHeal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686567114386235252, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6502677532987768310, guid: c432e99fb13894a53bbeeeaa181c97b0, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c432e99fb13894a53bbeeeaa181c97b0, type: 3}
+--- !u!1 &4032668274774422238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2035660816119730644, guid: c432e99fb13894a53bbeeeaa181c97b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3149974181250409226}
+  m_PrefabAsset: {fileID: 0}

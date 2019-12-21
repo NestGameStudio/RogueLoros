@@ -11,8 +11,6 @@ public class ActionChest : NodeAction {
 
         currentChest = this.GetComponent<ChestInstance>();
 
-        Debug.Log("Bau " + currentChest.currentChest.name);
-
         // Ganha itens do chest se tiver uma chave
         if (PlayerInstance.Instance.Keys > 0) {
 
