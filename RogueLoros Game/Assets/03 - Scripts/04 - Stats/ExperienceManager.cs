@@ -73,8 +73,6 @@ public class ExperienceManager: MonoBehaviour
         MagicLabel.text = PlayerInstance.Instance.MP.GetMinPossibleMagicRange().ToString() + "-" + PlayerInstance.Instance.MP.GetMaxPossibleMagicRange().ToString();
         MoneyLabel.text = PlayerInstance.Instance.Money.ToString();
         if (HealthSlider) {
-            Debug.Log(PlayerInstance.Instance.HP.GetCurrentLife());
-            Debug.Log(PlayerInstance.Instance.HP.GetMaxPossibleLife());
             HealthSlider.value = PlayerInstance.Instance.HP.GetCurrentLife() * 1.0f / PlayerInstance.Instance.HP.GetMaxPossibleLife();
         }
 

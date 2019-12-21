@@ -3007,11 +3007,6 @@ PrefabInstance:
       propertyPath: InitialNode
       value: 
       objectReference: {fileID: 578686507}
-    - target: {fileID: 6721177775664572811, guid: 386b5745d89375345ad54cd1a8a3cb07,
-        type: 3}
-      propertyPath: MaxValueInLevel
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 386b5745d89375345ad54cd1a8a3cb07, type: 3}
 --- !u!1001 &2513469436465390865
