@@ -3002,6 +3002,16 @@ PrefabInstance:
       propertyPath: InitialNode
       value: 
       objectReference: {fileID: 578686507}
+    - target: {fileID: 1776643457622512121, guid: 386b5745d89375345ad54cd1a8a3cb07,
+        type: 3}
+      propertyPath: MinValueInLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776643457622512121, guid: 386b5745d89375345ad54cd1a8a3cb07,
+        type: 3}
+      propertyPath: MaxValueInLevel
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 386b5745d89375345ad54cd1a8a3cb07, type: 3}
 --- !u!1001 &2513469436465390865
@@ -3273,6 +3283,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 115776615281381695, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 115776615281381695, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1252295072023923650, guid: 6ce4c3f7ef70a45498f93e72c8085fe5,
         type: 3}

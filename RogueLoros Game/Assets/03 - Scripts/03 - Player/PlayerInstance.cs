@@ -26,6 +26,8 @@ public class PlayerInstance: MonoBehaviour
     [HideInInspector] public MagicPoints MP;
     [HideInInspector] public AttackPoints AP;
 
+    [HideInInspector] public int Money;
+
     [HideInInspector] public SaveData Data;
 
     // Start is called before the first frame update
@@ -57,6 +59,34 @@ public class PlayerInstance: MonoBehaviour
             // Reseta o save
             RunManager.Instance.cleanSave = true;
         }
-        
     }
+
+    // Money
+    public void IncreaseMoney(int value) {
+        Money += value;
+
+		ExperienceManager.Instance.UpdateUI();
+	}
+
+	public void DecreaseMoney(int value) {
+
+        if (Money < value) {
+            Debug.Log("Num tenho dinheiro não senhora");
+        } else {
+            Money -= value;
+        }
+
+		ExperienceManager.Instance.UpdateUI();
+	}
+
+	// Health
+	public void IncreaseHealth(int value) {
+		HP.IncreaseLifePoints(value);
+		ExperienceManager.Instance.UpdateUI();
+	}
+
+	public void DecreaseHealth(int value) {
+		HP.DecreaseLifePoints(value);
+		ExperienceManager.Instance.UpdateUI();
+	}
 }

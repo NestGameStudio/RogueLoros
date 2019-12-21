@@ -42,6 +42,10 @@ public class HealthPoints: Stats {
         return currentValue;
     }
 
+    public void SetInitialLife(int value) {
+		currentValue = value;
+	}
+
     public int GetMaxPossibleLife() {
         return MaxValueInLevel;
     }

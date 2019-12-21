@@ -23,9 +23,8 @@ public class EnemyInstance : MonoBehaviour
 
     // Informações do inimigo
     [HideInInspector] public Sprite Art;
-    [HideInInspector] public int Life = 0;
-    [HideInInspector] public int AttackMin = 0;
-    [HideInInspector] public int AttackMax = 0;
+    [HideInInspector] public HealthPoints Life;
+    [HideInInspector] public AttackPoints Attack;
     [HideInInspector] public int XPDrop = 0;
     [HideInInspector] public int CoinDrop = 0;
 
@@ -34,11 +33,13 @@ public class EnemyInstance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Life = this.GetComponent<HealthPoints>();
+        Attack = this.GetComponent<AttackPoints>();
+
         // Se eu tirar isso vai dar merda?
         isBossNode = false;
-        setInitialState();
 
-        // If the node is the initial node this does apply
+        setInitialState();
         DisplayInHUD();
     }
 
@@ -87,23 +88,20 @@ public class EnemyInstance : MonoBehaviour
 
         // Seta os valores iniciais do inimigo
         Art = currentEnemy.Image;
-        Life = currentEnemy.Life;
-        AttackMin = currentEnemy.AttackMin;
-        AttackMax = currentEnemy.AttackMax;
+        Life.SetInitialLevel(currentEnemy.Life);
+        Attack.SetAttackValue(currentEnemy.AttackMin, currentEnemy.AttackMax);
         XPDrop = currentEnemy.XPDrop;
         CoinDrop = currentEnemy.CoinDrop;
 
     }
 
-    private void DisplayInHUD() {
-
-        Debug.Log(currentEnemy.Life);
+    public void DisplayInHUD() {
 
         if (Art) {
             HUDArt.sprite = Art;
         }
-        HUDLife.text = Life.ToString();
-        HUDAttack.text = AttackMin.ToString() + " - " + AttackMax.ToString();
+        HUDLife.text = Life.GetCurrentLife().ToString();
+        HUDAttack.text = Attack.GetMinPossibleAttackRange().ToString() + " - " + Attack.GetMaxPossibleAttackRange().ToString();
     }
 
 }

@@ -45,7 +45,8 @@ public class Tap : MonoBehaviour
                 if (!isEnemy) {
                     playerMov.MovePlayer(this.gameObject);
                     playerMov.allowNextMovimentation();
-                }
+					isEnemy = false;
+				}
 
             }
         }

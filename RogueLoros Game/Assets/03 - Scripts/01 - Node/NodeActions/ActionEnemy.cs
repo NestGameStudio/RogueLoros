@@ -32,15 +32,27 @@ public class ActionEnemy : NodeAction
             Debug.Log("Chegou no boss");
             RunManager.Instance.WinRun();
         }
-        
-        //Debug.Log("Combate");
-        ExperienceManager.Instance.IncreaseXPPoints(100);
 
-        // Permite o player andar até o inimigo
-        if (enemyStats.Life <= 0)
+        // Faz o ataque inimigo no player
+        int damageEnemy = Random.Range(enemyStats.Attack.GetMinPossibleAttackRange(), enemyStats.Attack.GetMaxPossibleAttackRange() + 1);
+        PlayerInstance.Instance.DecreaseHealth(damageEnemy);
+
+        // Faz o ataque player no inimigo
+        int damagePlayer = Random.Range(PlayerInstance.Instance.AP.GetMinPossibleAttackRange(), PlayerInstance.Instance.AP.GetMaxPossibleAttackRange() + 1);
+        enemyStats.Life.DecreaseLifePoints(damagePlayer);
+        enemyStats.DisplayInHUD();
+
+        // Player ganhou do inimigo
+        if (enemyStats.Life.GetCurrentLife() <= 0) {
+
+            // Recompensas de matar o inimigo
+            ExperienceManager.Instance.IncreaseXPPoints(enemyStats.XPDrop);
+            PlayerInstance.Instance.IncreaseMoney(enemyStats.CoinDrop);
+
+            // Permite o player andar até a posicao do inimigo
             PlayerMovimentation.Instance.MovePlayer(this.gameObject);
-        //PlayerMovimentation.Instance.allowNextMovimentation();
-
+            PlayerMovimentation.Instance.allowNextMovimentation();
+        }
     }
 
     public override void EndAction() {

@@ -50,7 +50,6 @@ public class ExperienceManager: MonoBehaviour
     public void LoadXP() {
 
         if (PlayerInstance.Instance.Data != null) {
-            //Debug.Log(PlayerInstance.Instance.Data.XP);
             currentXP = PlayerInstance.Instance.Data.XP;
         }
     }
@@ -66,15 +65,16 @@ public class ExperienceManager: MonoBehaviour
         checkIfXPLevelUpButtonIsInteractabel();
     }
 
-    // Chamado quando faz level up ou a vida/XP aumenta ou abaixa 
+    // Chamado quando faz level up ou a vida/XP aumenta ou abaixa ou ganha/perde dinheiro ou recebe ataque/ recupera vida
     public void UpdateUI() {
 
         XPLabel.text = currentXP.ToString();
         AttackLabel.text = PlayerInstance.Instance.AP.GetMinPossibleAttackRange().ToString() + "-" + PlayerInstance.Instance.AP.GetMaxPossibleAttackRange().ToString();
         MagicLabel.text = PlayerInstance.Instance.MP.GetMinPossibleMagicRange().ToString() + "-" + PlayerInstance.Instance.MP.GetMaxPossibleMagicRange().ToString();
-        MoneyLabel.text = "0";
-        if (HealthSlider)
-            HealthSlider.value = PlayerInstance.Instance.HP.GetCurrentLife() * 100 / PlayerInstance.Instance.HP.GetMaxPossibleLife();
+        MoneyLabel.text = PlayerInstance.Instance.Money.ToString();
+        if (HealthSlider) {
+            HealthSlider.value = PlayerInstance.Instance.HP.GetCurrentLife() * 1.0f / PlayerInstance.Instance.HP.GetMaxPossibleLife();
+        }
 
     }
 

@@ -45,6 +45,11 @@ public class AttackPoints : Stats
 
     }
 
+    public void SetAttackValue(int minValue, int maxValue) {
+        MaxValueInLevel = maxValue;
+        MinValueInLevel = minValue;
+    }
+
     public int GetMaxPossibleAttackRange() {
         return MaxValueInLevel;
     }
