@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1983618972252965309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473090971308745347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429c7bd7be5de4a76aae81267667022f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5550941065252690175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5447146382237284988, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_Name
+      value: SpellSuperArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273710589507138780, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 52616161751897522, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}
+    - {fileID: -1619764970304030513, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}
+    - {fileID: 7982834810619416670, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}
+--- !u!1 &473090971308745347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5447146382237284988, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5550941065252690175}
+  m_PrefabAsset: {fileID: 0}
