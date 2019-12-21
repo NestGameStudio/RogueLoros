@@ -14,6 +14,12 @@ public class ActionEnemy : NodeAction
     // Se ele não for derrotado o player sofre o dano e o inimigo tbm
 
 
+    // Randomiza o ataque dentro do range do inimigo e desconta da vida do player
+    // Faz o ataque do player no inimigo e desconta da vida do enemy
+    // Se a vida do inimigo nao chegar a 0, nada acontece até que o player escolha atacar de novo
+    // Se a vida do inimigo chegou a zero, o player recebe o XP e coin do inimigo e pode andar no tile
+    // Chama a funcao de andar que está no PlayerMovimentation
+
     public override void DoAction() {
         base.DoAction();
 
@@ -25,6 +31,10 @@ public class ActionEnemy : NodeAction
         
         //Debug.Log("Combate");
         ExperienceManager.Instance.IncreaseXPPoints(100);
+
+        // Permite o player andar até o inimigo
+        PlayerMovimentation.Instance.MovePlayer(this.gameObject);
+        PlayerMovimentation.Instance.allowNextMovimentation();
 
     }
 

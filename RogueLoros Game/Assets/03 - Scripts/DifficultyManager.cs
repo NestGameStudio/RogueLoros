@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+public enum Difficulty { Easy, Medium, Hard }
+
 public class DifficultyManager : MonoBehaviour
 {
 
@@ -23,7 +25,9 @@ public class DifficultyManager : MonoBehaviour
     #endregion
 
     // mantem o track da dificuldade que o player está agora (de acordo com o numeor máximo de lines na run)
-    // Mantem track da ultima maior dificuldade que o player estava 
+    // Mantem track da ultima maior dificuldade que o player estava
+
+    public Difficulty currentDifficulty = Difficulty.Easy;
 
     // Mantem track de quantas runs o jogador percorreu
     private int currentRun = 0;

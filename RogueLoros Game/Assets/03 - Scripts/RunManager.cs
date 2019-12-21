@@ -52,5 +52,9 @@ public class RunManager : MonoBehaviour
         ExperienceManager.Instance.DisplayUIStats();
     }
 
+    public int getCurrentRun() {
+        return currentRun;
+    }
+
 
 }

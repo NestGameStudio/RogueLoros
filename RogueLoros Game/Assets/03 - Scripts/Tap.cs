@@ -15,6 +15,8 @@ public class Tap : MonoBehaviour
     // Raycast
     private RaycastHit2D hit;
 
+    private bool isEnemy = false;
+
     private void OnMouseDown() {
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -30,13 +32,20 @@ public class Tap : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode)
             {
+
+                if (this.GetComponent<ActionEnemy>() != null) {
+                    isEnemy = true;
+                }
+
                 this.GetComponent<NodeAction>().DoAction();
                 gameObject.gameObject.GetComponent<Animator>().SetTrigger("Tap");
                 PlayerMovimentation playerMov = PlayerMovimentation.Instance;
 
-                // Espera derrotar o inimigo apara que ele possa andar
-                playerMov.MovePlayer(this.gameObject);
-                playerMov.allowNextMovimentation();
+                // Se o node não é inimigo ele anda
+                if (!isEnemy) {
+                    playerMov.MovePlayer(this.gameObject);
+                    playerMov.allowNextMovimentation();
+                }
             }
         }
     }
