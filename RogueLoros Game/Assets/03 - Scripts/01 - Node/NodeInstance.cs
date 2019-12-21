@@ -10,7 +10,9 @@ public class NodeInstance : MonoBehaviour
     [HideInInspector]
     public bool canWalkInThisNode = false;
 
-    public Shader lineShader;
+	[Space(10)]
+
+	public Shader lineShader;
     public GameObject line;
 
     private List<GameObject> lines = new List<GameObject>();

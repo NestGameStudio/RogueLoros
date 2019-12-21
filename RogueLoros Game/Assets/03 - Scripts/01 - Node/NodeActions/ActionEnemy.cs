@@ -50,8 +50,10 @@ public class ActionEnemy : NodeAction
             PlayerInstance.Instance.IncreaseMoney(enemyStats.CoinDrop);
 
             int dropkey = Random.Range(0, 2);
-            if (dropkey == 1)
+            if (dropkey == 1) {
+                Debug.Log("GANHEI UMA CHAVE");
                 PlayerInstance.Instance.Keys += 1;
+            }
 
             // Permite o player andar até a posicao do inimigo
             PlayerMovimentation.Instance.MovePlayer(this.gameObject);
