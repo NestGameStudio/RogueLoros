@@ -73,16 +73,16 @@ public class EnemyInstance : MonoBehaviour
             switch (difficulty)
             {
                 case Difficulty.Easy:
-                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length)];
+                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length - 1)];
                     break;
                 case Difficulty.Medium:
-                    currentEnemy = EnemyTypesMedium[Random.Range(0, EnemyTypesMedium.Length)];
+                    currentEnemy = EnemyTypesMedium[Random.Range(0, EnemyTypesMedium.Length - 1)];
                     break;
                 case Difficulty.Hard:
-                    currentEnemy = EnemyTypesHard[Random.Range(0, EnemyTypesHard.Length)];
+                    currentEnemy = EnemyTypesHard[Random.Range(0, EnemyTypesHard.Length - 1)];
                     break;
                 default:
-                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length)];
+                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length - 1)];
                     break;
             }
         }
@@ -100,6 +100,8 @@ public class EnemyInstance : MonoBehaviour
     }
 
     private void DisplayInHUD() {
+
+        Debug.Log(currentEnemy.Life);
 
         if (Art) {
             HUDArt.sprite = Art;
