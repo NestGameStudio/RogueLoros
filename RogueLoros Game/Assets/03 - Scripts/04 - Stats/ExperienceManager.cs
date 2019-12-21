@@ -58,6 +58,8 @@ public class ExperienceManager: MonoBehaviour
 
     public void DisplayUIStats() {
 
+        Debug.Log("Abri");
+
         if (!PlayerStatsUI.gameObject.activeSelf)
             PlayerStatsUI.SetActive(true);
 

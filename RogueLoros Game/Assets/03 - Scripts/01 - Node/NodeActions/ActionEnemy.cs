@@ -40,10 +40,11 @@ public class ActionEnemy : NodeAction
         // Faz o ataque player no inimigo
         int damagePlayer = Random.Range(PlayerInstance.Instance.AP.GetMinPossibleAttackRange(), PlayerInstance.Instance.AP.GetMaxPossibleAttackRange() + 1);
         enemyStats.Life.DecreaseLifePoints(damagePlayer);
+        Debug.Log("AAAA");
         enemyStats.DisplayInHUD();
 
         // Player ganhou do inimigo
-        if (enemyStats.Life.GetCurrentLife() <= 0) {
+        if (enemyStats.Life.GetCurrentLife() <= 0 && PlayerInstance.Instance.HP.GetCurrentLife() > 0) {
 
             // Recompensas de matar o inimigo
             ExperienceManager.Instance.IncreaseXPPoints(enemyStats.XPDrop);
