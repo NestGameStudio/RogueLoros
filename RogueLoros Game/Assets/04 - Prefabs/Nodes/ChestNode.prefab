@@ -24,6 +24,7 @@ MonoBehaviour:
   HealValue: 0
   XP: 0
   Feitico: 0
+  currentChest: {fileID: 0}
 --- !u!114 &5435797387975342387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +44,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4556905562653890903, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7329819433191029454, guid: 1652ff20262fd9e4a94bce2da8f650da,
         type: 3}
       propertyPath: m_Name
