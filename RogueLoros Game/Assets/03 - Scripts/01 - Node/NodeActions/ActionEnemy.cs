@@ -20,8 +20,12 @@ public class ActionEnemy : NodeAction
     // Se a vida do inimigo chegou a zero, o player recebe o XP e coin do inimigo e pode andar no tile
     // Chama a funcao de andar que está no PlayerMovimentation
 
+    private EnemyInstance enemyStats;
+
     public override void DoAction() {
         base.DoAction();
+
+        enemyStats = this.GetComponent<EnemyInstance>();
 
         if (this.gameObject.GetComponent<EnemyInstance>().isBossNode) {
 
@@ -33,8 +37,9 @@ public class ActionEnemy : NodeAction
         ExperienceManager.Instance.IncreaseXPPoints(100);
 
         // Permite o player andar até o inimigo
-        PlayerMovimentation.Instance.MovePlayer(this.gameObject);
-        PlayerMovimentation.Instance.allowNextMovimentation();
+        if (enemyStats.Life <= 0)
+            PlayerMovimentation.Instance.MovePlayer(this.gameObject);
+        //PlayerMovimentation.Instance.allowNextMovimentation();
 
     }
 

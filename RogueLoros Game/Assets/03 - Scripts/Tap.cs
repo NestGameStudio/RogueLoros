@@ -46,6 +46,7 @@ public class Tap : MonoBehaviour
                     playerMov.MovePlayer(this.gameObject);
                     playerMov.allowNextMovimentation();
                 }
+
             }
         }
     }

@@ -39,9 +39,7 @@ public class EnemyInstance : MonoBehaviour
         setInitialState();
 
         // If the node is the initial node this does apply
-        if (currentEnemy) {
-            DisplayInHUD();
-        }
+        DisplayInHUD();
     }
 
     private void setInitialState() {
@@ -73,21 +71,19 @@ public class EnemyInstance : MonoBehaviour
             switch (difficulty)
             {
                 case Difficulty.Easy:
-                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length - 1)];
+                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length)];
                     break;
                 case Difficulty.Medium:
-                    currentEnemy = EnemyTypesMedium[Random.Range(0, EnemyTypesMedium.Length - 1)];
+                    currentEnemy = EnemyTypesMedium[Random.Range(0, EnemyTypesMedium.Length)];
                     break;
                 case Difficulty.Hard:
-                    currentEnemy = EnemyTypesHard[Random.Range(0, EnemyTypesHard.Length - 1)];
+                    currentEnemy = EnemyTypesHard[Random.Range(0, EnemyTypesHard.Length)];
                     break;
                 default:
-                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length - 1)];
+                    currentEnemy = EnemyTypesEasy[Random.Range(0, EnemyTypesEasy.Length)];
                     break;
             }
         }
-
-        Debug.Log(currentEnemy.Life);
 
         // Seta os valores iniciais do inimigo
         Art = currentEnemy.Image;
