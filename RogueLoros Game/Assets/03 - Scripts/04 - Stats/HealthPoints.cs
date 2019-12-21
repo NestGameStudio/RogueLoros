@@ -24,8 +24,6 @@ public class HealthPoints: Stats {
     public override void LoadStat() {
         base.LoadStat();
 
-        currentValue = MaxValueInLevel;
-
         if (PlayerInstance.Instance.Data != null) {
 
             int levelLimit = PlayerInstance.Instance.Data.HealthLevel - currentLevel;
@@ -34,6 +32,8 @@ public class HealthPoints: Stats {
                 IncreaseLevel();
             }
         }
+
+        currentValue = MaxValueInLevel;
     }
 
     // -------- Funções relativas aos valores de vida -----------

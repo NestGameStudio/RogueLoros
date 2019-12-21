@@ -49,6 +49,10 @@ public class ActionEnemy : NodeAction
             ExperienceManager.Instance.IncreaseXPPoints(enemyStats.XPDrop);
             PlayerInstance.Instance.IncreaseMoney(enemyStats.CoinDrop);
 
+            int dropkey = Random.Range(0, 2);
+            if (dropkey == 1)
+                PlayerInstance.Instance.Keys += 1;
+
             // Permite o player andar até a posicao do inimigo
             PlayerMovimentation.Instance.MovePlayer(this.gameObject);
             PlayerMovimentation.Instance.allowNextMovimentation();

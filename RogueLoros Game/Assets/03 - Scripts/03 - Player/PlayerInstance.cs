@@ -27,8 +27,9 @@ public class PlayerInstance: MonoBehaviour
     [HideInInspector] public AttackPoints AP;
 
     [HideInInspector] public int Money;
+	[HideInInspector] public int Keys = 0;
 
-    [HideInInspector] public SaveData Data;
+	[HideInInspector] public SaveData Data;
 
     // Start is called before the first frame update
     void Start() {
@@ -56,7 +57,7 @@ public class PlayerInstance: MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.R)) {
-            // Reseta o save
+			// Reseta o save
             RunManager.Instance.cleanSave = true;
         }
     }

@@ -27,6 +27,7 @@ public class EnemyInstance : MonoBehaviour
     [HideInInspector] public AttackPoints Attack;
     [HideInInspector] public int XPDrop = 0;
     [HideInInspector] public int CoinDrop = 0;
+    [HideInInspector] public bool KeyDrop = false;
 
     private Enemy currentEnemy;
 
