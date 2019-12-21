@@ -144,7 +144,7 @@ public class PlayerMovimentation: MonoBehaviour {
     }
 
     private void changePlayerNode(GameObject newNode) {
-        this.transform.position = newNode.transform.position;
+        this.transform.position = new Vector2(newNode.transform.position.x, newNode.transform.position.y+0.55f) ;
 
         currentNode.GetComponent<NodeInstance>().DestroyLines();
 
@@ -185,5 +185,8 @@ public class PlayerMovimentation: MonoBehaviour {
 
         allowNextMovimentation();
     }
-
+    private void Update()
+    {
+        currentNode.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+    }
 }
