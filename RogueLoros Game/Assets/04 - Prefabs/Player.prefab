@@ -135,7 +135,7 @@ MonoBehaviour:
   LevelCap: f401000058020000bc0200002003000084030000
   currentLevel: 1
   LinearHPMaxValueIncreasePerLevel: 1
-  MaxValueInLevel: 3
+  MaxValueInLevel: 10
 --- !u!114 &1776643457622512121
 MonoBehaviour:
   m_ObjectHideFlags: 0

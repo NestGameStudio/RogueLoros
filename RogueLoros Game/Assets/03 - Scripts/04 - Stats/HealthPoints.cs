@@ -13,12 +13,18 @@ public class HealthPoints: Stats {
     [Tooltip("Valor máximo de vida inicial")]
     public int MaxValueInLevel = 3;
 
-    private int currentValue = 3;
+    private int currentValue;
+
+    HealthPoints() {
+        currentValue = MaxValueInLevel;
+    }
 
     // -------- Funções relativas ao load de jogo -----------
 
     public override void LoadStat() {
         base.LoadStat();
+
+        currentValue = MaxValueInLevel;
 
         if (PlayerInstance.Instance.Data != null) {
 

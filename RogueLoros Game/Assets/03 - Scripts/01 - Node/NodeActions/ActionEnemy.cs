@@ -40,7 +40,6 @@ public class ActionEnemy : NodeAction
         // Faz o ataque player no inimigo
         int damagePlayer = Random.Range(PlayerInstance.Instance.AP.GetMinPossibleAttackRange(), PlayerInstance.Instance.AP.GetMaxPossibleAttackRange() + 1);
         enemyStats.Life.DecreaseLifePoints(damagePlayer);
-        Debug.Log("AAAA");
         enemyStats.DisplayInHUD();
 
         // Player ganhou do inimigo
