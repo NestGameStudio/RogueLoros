@@ -8,8 +8,8 @@ public class EnemyInstance : MonoBehaviour
 {
     // elementos da HUD do inimigo
     public Image HUDArt;
-    public TMP_Text HUDLife;
-    public TMP_Text HUDAttack;
+    public Text HUDLife;
+    public Text HUDAttack;
 
     // Faz os ajustes de dificuldade - poe o inimigo no preset certo dele
     public Enemy[] EnemyTypesEasy;
