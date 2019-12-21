@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 788633976954086466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: -1.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7c0b87df9908f844da031794583fb174, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 492d70baced9f1944b99c6b60d5e59d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   HP: {fileID: 0}
   MP: {fileID: 0}
   AP: {fileID: 0}
+  Money: 0
   Data:
     HealthLevel: 1
     MagicLevel: 1
@@ -151,8 +152,8 @@ MonoBehaviour:
   currentLevel: 1
   LinearAPMagnitudeUpgrade: 1
   LinearAPAmplitudeUpgrade: 2
-  MaxValueInLevel: 2
-  MinValueInLevel: 1
+  MaxValueInLevel: 3
+  MinValueInLevel: 2
 --- !u!114 &185942029575317473
 MonoBehaviour:
   m_ObjectHideFlags: 0
