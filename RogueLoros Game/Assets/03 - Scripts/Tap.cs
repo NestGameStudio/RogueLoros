@@ -33,8 +33,12 @@ public class Tap : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode)
             {
 
+
                 if (this.GetComponent<ActionEnemy>() != null) {
                     isEnemy = true;
+
+                    //hit.collider.gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                    //hit.collider.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
                 }
 
                 this.GetComponent<NodeAction>().DoAction();

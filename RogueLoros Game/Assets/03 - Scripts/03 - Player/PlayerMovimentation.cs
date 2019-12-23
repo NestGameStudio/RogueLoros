@@ -59,6 +59,21 @@ public class PlayerMovimentation: MonoBehaviour {
             node.GetComponent<NodeInstance>().canWalkInThisNode = true;
             currentNode.GetComponent<NodeInstance>().DrawLine(node.transform.position);
             node.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255, 255);
+            if (node.CompareTag("Enemy"))
+            {
+                node.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                node.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            }
+            else if(node.CompareTag("Health"))
+            {
+                node.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                node.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            }
+            else if (node.CompareTag("Chest"))
+            {
+                node.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                node.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+            }
         }
     }
 
@@ -142,6 +157,11 @@ public class PlayerMovimentation: MonoBehaviour {
         changePlayerNode(node);
         GameObject.FindGameObjectWithTag("Player").transform.parent = node.transform.GetChild(0);
         GridManager.Instance.AddLineInGrid(node);
+
+        if (node.CompareTag("Chest"))
+        {
+            node.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        }
     }
 
     private void changePlayerNode(GameObject newNode) {

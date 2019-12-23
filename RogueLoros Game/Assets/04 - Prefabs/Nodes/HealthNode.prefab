@@ -19,15 +19,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4556905562653890903, guid: 1652ff20262fd9e4a94bce2da8f650da,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7329819433191029454, guid: 1652ff20262fd9e4a94bce2da8f650da,
         type: 3}
       propertyPath: m_Name
       value: HealthNode
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329819433191029454, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Health
       objectReference: {fileID: 0}
     - target: {fileID: 4754840210360225895, guid: 1652ff20262fd9e4a94bce2da8f650da,
         type: 3}
@@ -82,6 +82,11 @@ PrefabInstance:
     - target: {fileID: 4754840210360225895, guid: 1652ff20262fd9e4a94bce2da8f650da,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556905562653890903, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 442685784434092832, guid: 1652ff20262fd9e4a94bce2da8f650da,

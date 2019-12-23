@@ -21,7 +21,11 @@ public class ActionEnemy : NodeAction
     // Chama a funcao de andar que está no PlayerMovimentation
 
     private EnemyInstance enemyStats;
-
+    private void Start()
+    {
+        gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        //gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+    }
     public override void DoAction() {
         base.DoAction();
 
@@ -48,6 +52,7 @@ public class ActionEnemy : NodeAction
             // Recompensas de matar o inimigo
 
             gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
 
             ExperienceManager.Instance.IncreaseXPPoints(enemyStats.XPDrop);
             PlayerInstance.Instance.IncreaseMoney(enemyStats.CoinDrop);
