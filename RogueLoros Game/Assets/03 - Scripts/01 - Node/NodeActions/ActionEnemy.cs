@@ -46,6 +46,9 @@ public class ActionEnemy : NodeAction
         if (enemyStats.Life.GetCurrentLife() <= 0 && PlayerInstance.Instance.HP.GetCurrentLife() > 0) {
 
             // Recompensas de matar o inimigo
+
+            gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+
             ExperienceManager.Instance.IncreaseXPPoints(enemyStats.XPDrop);
             PlayerInstance.Instance.IncreaseMoney(enemyStats.CoinDrop);
 
