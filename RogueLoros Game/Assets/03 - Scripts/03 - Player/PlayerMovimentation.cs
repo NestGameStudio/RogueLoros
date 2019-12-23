@@ -140,11 +140,12 @@ public class PlayerMovimentation: MonoBehaviour {
     // Chamado pelo Tap
     public void MovePlayer(GameObject node) {
         changePlayerNode(node);
+        GameObject.FindGameObjectWithTag("Player").transform.parent = node.transform.GetChild(0);
         GridManager.Instance.AddLineInGrid(node);
     }
 
     private void changePlayerNode(GameObject newNode) {
-        this.transform.position = new Vector2(newNode.transform.position.x, newNode.transform.position.y+0.55f) ;
+        this.transform.position = new Vector2(newNode.transform.position.x, newNode.transform.position.y+0.73f) ;
 
         currentNode.GetComponent<NodeInstance>().DestroyLines();
 
