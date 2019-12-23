@@ -269,9 +269,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6749290761094987954}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 3
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -692,7 +692,6 @@ GameObject:
   - component: {fileID: 7747808859550068181}
   - component: {fileID: 7747808859550068183}
   - component: {fileID: 7747808859550068182}
-  - component: {fileID: 7747808859550068176}
   m_Layer: 5
   m_Name: UI-Pause
   m_TagString: Untagged
@@ -758,23 +757,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7747808859550068176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747808859550068180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d890572276aa4231b70bf3769184bda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.121568635, g: 0.121568635, b: 0.27450982, a: 1}
-  m_EffectDistance: {x: 7.2, y: -7.2}
-  m_UseGraphicAlpha: 1
-  m_halfSampleCountX: 1
-  m_halfSampleCountY: 1
 --- !u!1 &7747808859696635607
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,8 +792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.05, y: 0.54}
-  m_SizeDelta: {x: 186.1, y: 97.2}
+  m_AnchoredPosition: {x: -2.41, y: -2.95}
+  m_SizeDelta: {x: 146.85, y: 133.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7747808859696635603
 CanvasRenderer:
@@ -843,12 +825,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: c28158136e285614895a67da20317fd4, type: 3}
-    m_FontSize: 85
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 104
-    m_Alignment: 7
+    m_MaxSize: 138
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -867,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d890572276aa4231b70bf3769184bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.007843138, g: 0.007843138, b: 0.25882354, a: 1}
+  m_EffectColor: {r: 0, g: 0.20000002, b: 0.35686275, a: 1}
   m_EffectDistance: {x: 8, y: -8}
   m_UseGraphicAlpha: 1
   m_halfSampleCountX: 1
@@ -1102,8 +1084,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.05, y: -0.7}
-  m_SizeDelta: {x: 186.1, y: 97.2}
+  m_AnchoredPosition: {x: -1.87, y: -2.95}
+  m_SizeDelta: {x: 147.92, y: 133.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7747808860063852001
 CanvasRenderer:
@@ -1135,12 +1117,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: c28158136e285614895a67da20317fd4, type: 3}
-    m_FontSize: 85
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 104
-    m_Alignment: 7
+    m_MaxSize: 138
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1159,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d890572276aa4231b70bf3769184bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.007843138, g: 0.007843138, b: 0.25882354, a: 1}
+  m_EffectColor: {r: 0.34117648, g: 0.15294118, b: 0, a: 1}
   m_EffectDistance: {x: 8, y: -8}
   m_UseGraphicAlpha: 1
   m_halfSampleCountX: 1
@@ -1252,7 +1234,6 @@ GameObject:
   - component: {fileID: 7747808860256804470}
   - component: {fileID: 7747808860256804464}
   - component: {fileID: 7747808860256804471}
-  - component: {fileID: 7747808860256804465}
   m_Layer: 5
   m_Name: UI-Pause (1)
   m_TagString: Untagged
@@ -1317,23 +1298,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7747808860256804465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747808860256804469}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d890572276aa4231b70bf3769184bda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.121568635, g: 0.121568635, b: 0.27450982, a: 1}
-  m_EffectDistance: {x: 7.2, y: -7.2}
-  m_UseGraphicAlpha: 1
-  m_halfSampleCountX: 1
-  m_halfSampleCountY: 1
 --- !u!1 &7747808860471217106
 GameObject:
   m_ObjectHideFlags: 0
