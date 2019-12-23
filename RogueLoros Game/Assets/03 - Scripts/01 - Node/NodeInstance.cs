@@ -24,11 +24,12 @@ public class NodeInstance : MonoBehaviour
             if (canWalkInThisNode == false)
             {
                 gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(73, 71, 82, 255);
-            }
+            }/*
             if (GameObject.FindGameObjectWithTag("Player").transform.position == gameObject.transform.position)
             {
                 gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             }
+            */
         
     }
     public GameObject RandomizeType() {

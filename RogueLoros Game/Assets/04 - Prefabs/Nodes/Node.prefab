@@ -679,6 +679,7 @@ MonoBehaviour:
   NodeTypes:
   - {fileID: 8553631486718364829, guid: da676796ef14b484294f358343b4ae9a, type: 3}
   - {fileID: 828593335800045982, guid: e450a38a3c6462349a86222558415572, type: 3}
+  - {fileID: 8013045552284416061, guid: 7e25c30d328e88e4299ee6840bb913e4, type: 3}
   canWalkInThisNode: 0
   lineShader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
   line: {fileID: 1749650447129118191, guid: cd56e203317d8c34eb1b196c840c1c68, type: 3}
