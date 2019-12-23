@@ -7,6 +7,8 @@ TagManager:
   - Line
   - Node
   - Enemy
+  - Health
+  - Chest
   layers:
   - Default
   - TransparentFX
