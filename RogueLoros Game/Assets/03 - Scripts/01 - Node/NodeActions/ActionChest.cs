@@ -18,6 +18,9 @@ public class ActionChest : NodeAction {
             PlayerInstance.Instance.IncreaseHealth(currentChest.HealValue);
             ExperienceManager.Instance.IncreaseXPPoints(currentChest.XP);
 
+            //Tocar animação do bau abrindo
+            gameObject.transform.GetChild(0).GetChild(1).GetComponent<Animator>().Play("Bau-Open");
+
             // fazer algo para acrescentar feitiço
 
             PlayerInstance.Instance.Keys -= 1;

@@ -160,8 +160,10 @@ public class PlayerMovimentation: MonoBehaviour {
 
         if (node.CompareTag("Chest"))
         {
+            //Fazer chest desaparecer
             node.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
         }
+
     }
 
     private void changePlayerNode(GameObject newNode) {
