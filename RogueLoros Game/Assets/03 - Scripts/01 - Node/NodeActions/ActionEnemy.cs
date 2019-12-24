@@ -21,17 +21,21 @@ public class ActionEnemy : NodeAction
     // Chama a funcao de andar que está no PlayerMovimentation
 
     private EnemyInstance enemyStats;
+
     private void Start()
     {
         gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
-        //gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        //gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);    
     }
-    public override void DoAction() {
+
+    public override void DoAction()
+    {
         base.DoAction();
 
         enemyStats = this.GetComponent<EnemyInstance>();
 
-        if (this.gameObject.GetComponent<EnemyInstance>().isBossNode) {
+        if (this.gameObject.GetComponent<EnemyInstance>().isBossNode)
+        {
 
             Debug.Log("Chegou no boss");
             RunManager.Instance.WinRun();
@@ -46,8 +50,12 @@ public class ActionEnemy : NodeAction
         enemyStats.Life.DecreaseLifePoints(damagePlayer);
         enemyStats.DisplayInHUD();
 
+        //Shake camera
+        EZCameraShake.CameraShaker.Instance.ShakeOnce(10, 7, .1f, .1f);
+        
         // Player ganhou do inimigo
-        if (enemyStats.Life.GetCurrentLife() <= 0 && PlayerInstance.Instance.HP.GetCurrentLife() > 0) {
+        if (enemyStats.Life.GetCurrentLife() <= 0 && PlayerInstance.Instance.HP.GetCurrentLife() > 0)
+        {
 
             // Recompensas de matar o inimigo
 
@@ -58,7 +66,8 @@ public class ActionEnemy : NodeAction
             PlayerInstance.Instance.IncreaseMoney(enemyStats.CoinDrop);
 
             int dropkey = Random.Range(0, 2);
-            if (dropkey == 1) {
+            if (dropkey == 1)
+            {
                 PlayerInstance.Instance.Keys += 1;
             }
 
@@ -68,7 +77,8 @@ public class ActionEnemy : NodeAction
         }
     }
 
-    public override void EndAction() {
+    public override void EndAction()
+    {
         base.EndAction();
     }
 }
