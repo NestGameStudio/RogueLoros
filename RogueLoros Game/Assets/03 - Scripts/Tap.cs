@@ -12,6 +12,8 @@ public class Tap : MonoBehaviour
 
     public GameObject Player;
 
+    public Animator anim;
+
     // Raycast
     private RaycastHit2D hit;
 
@@ -41,19 +43,39 @@ public class Tap : MonoBehaviour
                     //hit.collider.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
                 }
 
+
                 this.GetComponent<NodeAction>().DoAction();
                 gameObject.gameObject.GetComponent<Animator>().SetTrigger("Tap");
-                PlayerMovimentation playerMov = PlayerMovimentation.Instance;
 
                 // Se o node não é inimigo ele anda
                 if (!isEnemy) {
-                    playerMov.MovePlayer(this.gameObject);
-                    playerMov.allowNextMovimentation();
-					isEnemy = false;
+
+                    // é um chest
+                    if (this.GetComponent<ActionChest>() != null && anim) {
+                        StartCoroutine(WaitForAnimation("Bau"));
+                    } else {
+                        MovePlayer();
+                    }
 				}
 
             }
         }
+    }
+
+    private void MovePlayer() {
+
+        PlayerMovimentation.Instance.MovePlayer(this.gameObject);
+        PlayerMovimentation.Instance.allowNextMovimentation();
+        isEnemy = false;
+    }
+
+    private IEnumerator WaitForAnimation(string animationName) {
+
+        do {
+            yield return null;
+        } while (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName));
+
+        MovePlayer();
     }
 
 }
