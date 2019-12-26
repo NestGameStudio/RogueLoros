@@ -52,7 +52,7 @@ public class Tap : MonoBehaviour
 
                     // é um chest
                     if (this.GetComponent<ActionChest>() != null && anim) {
-                        StartCoroutine(WaitForAnimation("Bau"));
+                        StartCoroutine(WaitForAnimation("Bau-Open"));
                     } else {
                         MovePlayer();
                     }
@@ -71,6 +71,7 @@ public class Tap : MonoBehaviour
 
     private IEnumerator WaitForAnimation(string animationName) {
 
+        anim.SetTrigger("Open");
         do {
             yield return null;
         } while (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName));
