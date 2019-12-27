@@ -12,10 +12,14 @@ public class Tap : MonoBehaviour
 
     public GameObject Player;
 
+    public Animator anim;
+
     // Raycast
     private RaycastHit2D hit;
 
     private bool isEnemy = false;
+
+    private bool canWalk = true;
 
     private void OnMouseDown() {
 
@@ -30,26 +34,56 @@ public class Tap : MonoBehaviour
         // Faz a acao do node e faz o player andar até o node
         if (hit.collider.gameObject != null)
         {
-            if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode)
+            if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode && canWalk)
             {
+
 
                 if (this.GetComponent<ActionEnemy>() != null) {
                     isEnemy = true;
+
+                    //hit.collider.gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                    //hit.collider.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
                 }
+
 
                 this.GetComponent<NodeAction>().DoAction();
                 gameObject.gameObject.GetComponent<Animator>().SetTrigger("Tap");
-                PlayerMovimentation playerMov = PlayerMovimentation.Instance;
 
                 // Se o node não é inimigo ele anda
                 if (!isEnemy) {
-                    playerMov.MovePlayer(this.gameObject);
-                    playerMov.allowNextMovimentation();
-					isEnemy = false;
+
+                    // é um chest
+                    if (this.GetComponent<ActionChest>() != null && anim) {
+                        StartCoroutine(WaitForAnimation("Bau-Open"));
+                    } else {
+                        MovePlayer();
+                    }
 				}
 
             }
         }
+    }
+
+    private void MovePlayer() {
+
+        PlayerMovimentation.Instance.MovePlayer(this.gameObject);
+        PlayerMovimentation.Instance.allowNextMovimentation();
+        isEnemy = false;
+    }
+
+    private IEnumerator WaitForAnimation(string animationName) {
+
+        anim.SetTrigger("Open");
+
+        canWalk = false;
+
+        do {
+            yield return null;
+        } while (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName));
+
+        MovePlayer();
+
+        canWalk = true;
     }
 
 }

@@ -30,7 +30,7 @@ public class CameraFollowPlayer : MonoBehaviour
 
                 Vector3 targetDirection = (target.transform.position - posNoZ);
 
-                interpVelocity = targetDirection.magnitude * 5f;
+                interpVelocity = targetDirection.magnitude * 10f;
 
                 targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
 

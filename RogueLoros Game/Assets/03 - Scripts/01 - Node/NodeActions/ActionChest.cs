@@ -18,6 +18,7 @@ public class ActionChest : NodeAction {
             PlayerInstance.Instance.IncreaseHealth(currentChest.HealValue);
             ExperienceManager.Instance.IncreaseXPPoints(currentChest.XP);
 
+<<<<<<< HEAD
             // randomiza quais dos feiticos possiveis podem sair
             if (currentChest.Feiticos.Length > 0) {
 
@@ -30,6 +31,12 @@ public class ActionChest : NodeAction {
                 // Adiciona o feitico a lista de feiticos
 
             }
+=======
+            //Tocar animação do bau abrindo
+            gameObject.transform.GetChild(0).GetChild(1).GetComponent<Animator>().Play("Bau-Open");
+
+            // fazer algo para acrescentar feitiço
+>>>>>>> 00933cb59b3205f96fa8744020f178c303274397
 
             PlayerInstance.Instance.Keys -= 1;
         }

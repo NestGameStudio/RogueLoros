@@ -84,16 +84,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4866373782356842558, guid: 1652ff20262fd9e4a94bce2da8f650da,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 209
-      objectReference: {fileID: 0}
-    - target: {fileID: 7073685832285865921, guid: 1652ff20262fd9e4a94bce2da8f650da,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 247.6866
-      objectReference: {fileID: 0}
     - target: {fileID: 7329819433191029454, guid: 1652ff20262fd9e4a94bce2da8f650da,
         type: 3}
       propertyPath: m_Name
@@ -174,6 +164,46 @@ PrefabInstance:
         type: 3}
       propertyPath: NodeTypes.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731293022742562668, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073685832285865921, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 247.6866
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866373782356842558, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 209
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744512469649501515, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261059848629306313, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595335309012211435, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313218811954230786, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312007587954343457, guid: 1652ff20262fd9e4a94bce2da8f650da,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1659760641785019946, guid: 1652ff20262fd9e4a94bce2da8f650da,
         type: 3}
