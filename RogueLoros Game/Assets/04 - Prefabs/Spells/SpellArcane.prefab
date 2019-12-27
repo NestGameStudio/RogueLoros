@@ -79,7 +79,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 296731782639490804, guid: 164f6094168424e2db94fcf58f3ecea2,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 386932265882835635, guid: 164f6094168424e2db94fcf58f3ecea2,
+        type: 3}
+    - target: {fileID: 296731782639490804, guid: 164f6094168424e2db94fcf58f3ecea2,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[8]
+      value: 
+      objectReference: {fileID: 7134462715240074669}
+    m_RemovedComponents:
+    - {fileID: -7932374726772496424, guid: 164f6094168424e2db94fcf58f3ecea2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 164f6094168424e2db94fcf58f3ecea2, type: 3}
 --- !u!1 &7134462715240074669 stripped
 GameObject:

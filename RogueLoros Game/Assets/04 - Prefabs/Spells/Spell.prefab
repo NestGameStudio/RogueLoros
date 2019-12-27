@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpellTypes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 353054662831039956, guid: 5d12b0f65a94f4023b86303247aa6462, type: 3}
+  - {fileID: 386932265882835635, guid: 164f6094168424e2db94fcf58f3ecea2, type: 3}
+  - {fileID: 3269361086808041001, guid: 4a3a374c602494ec2ab6a202d8ed7595, type: 3}
+  - {fileID: 2035660816119730644, guid: c432e99fb13894a53bbeeeaa181c97b0, type: 3}
+  - {fileID: 4032668274774422238, guid: 24fe4887d732e4ddc9a73634df3678af, type: 3}
+  - {fileID: 5371449380723072727, guid: 383715c2be854454a9dd3d6908350a15, type: 3}
+  - {fileID: 5447146382237284988, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}
+  - {fileID: 473090971308745347, guid: d2a17f3c1d26e4415ba1909ab2126708, type: 3}
+  - {fileID: 7134462715240074669, guid: 4dfcd9d3597b947529c6c3e6926a5ab3, type: 3}
+  - {fileID: 5888033249839461422, guid: 285baeb6e33264703a4a35085827d695, type: 3}

@@ -18,7 +18,18 @@ public class ActionChest : NodeAction {
             PlayerInstance.Instance.IncreaseHealth(currentChest.HealValue);
             ExperienceManager.Instance.IncreaseXPPoints(currentChest.XP);
 
-            // fazer algo para acrescentar feitiço
+            // randomiza quais dos feiticos possiveis podem sair
+            if (currentChest.Feiticos.Length > 0) {
+
+                int typeIndex = Random.Range(0, currentChest.Feiticos.Length);
+
+                // cria o feitico
+                GameObject Spell = SpellManager.Instance.CreateSpell(currentChest.Feiticos[typeIndex]);
+
+                // Verifica quantos espacos vazios ainda tem na HUD de feiticos
+                // Adiciona o feitico a lista de feiticos
+
+            }
 
             PlayerInstance.Instance.Keys -= 1;
         }

@@ -847,6 +847,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678860300}
   m_CullTransparentMesh: 0
+--- !u!1 &709857644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709857645}
+  m_Layer: 0
+  m_Name: Spells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709857645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709857644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 654.6384, y: 2151.1624, z: -20535.334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &761549941 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7845886951485788748, guid: 85050938c940b2a41aaefcc1909630e6,
@@ -3763,11 +3793,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4195548706380453673, guid: 85050938c940b2a41aaefcc1909630e6,
-        type: 3}
-      propertyPath: RunLines.Array.data[0]
-      value: 20
-      objectReference: {fileID: 0}
+    - target: {fileID: 463079090, guid: 85050938c940b2a41aaefcc1909630e6, type: 3}
+      propertyPath: SpellsParent
+      value: 
+      objectReference: {fileID: 709857644}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85050938c940b2a41aaefcc1909630e6, type: 3}
 --- !u!114 &7845886951135282746 stripped

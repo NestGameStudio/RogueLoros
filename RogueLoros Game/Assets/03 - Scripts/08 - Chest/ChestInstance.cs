@@ -14,7 +14,7 @@ public class ChestInstance : MonoBehaviour
     [HideInInspector] public int HealValue = 0;
     [HideInInspector] public int XP = 0;
 
-    [HideInInspector] public int Feitico = 0;
+    [HideInInspector] public SpellType[] Feiticos;
 
     [HideInInspector] public Chest currentChest;
 
@@ -48,7 +48,7 @@ public class ChestInstance : MonoBehaviour
         Coin = currentChest.Coin;
         HealValue = currentChest.HealValue;
         XP = currentChest.XP;
-        Feitico = currentChest.Feitico;
+        Feiticos = currentChest.PossibleSpells;
     }
 
 

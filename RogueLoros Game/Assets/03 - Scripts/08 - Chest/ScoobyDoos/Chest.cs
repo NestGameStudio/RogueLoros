@@ -12,5 +12,5 @@ public class Chest : ScriptableObject
     public int HealValue = 0;
     public int XP = 0;
 
-    public int Feitico = 0;
+    public SpellType[] PossibleSpells;
 }

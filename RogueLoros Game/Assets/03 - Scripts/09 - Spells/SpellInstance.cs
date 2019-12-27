@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpellInstance : MonoBehaviour
 {
-    [SerializeField]
-    public List<GameObject> SpellTypes;
+    private SpellType currentType = SpellType.None;
 
     // Start is called before the first frame update
     void Start()

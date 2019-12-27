@@ -79,6 +79,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5393269345911600699, guid: d0ad0e13677ec49bd95bacb623ebd7a9,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[7]
+      value: 
+      objectReference: {fileID: 473090971308745347}
     m_RemovedComponents:
     - {fileID: 52616161751897522, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}
     - {fileID: -1619764970304030513, guid: d0ad0e13677ec49bd95bacb623ebd7a9, type: 3}

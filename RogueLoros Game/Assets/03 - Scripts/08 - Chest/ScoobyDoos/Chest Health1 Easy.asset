@@ -16,4 +16,4 @@ MonoBehaviour:
   Coin: 0
   HealValue: 50
   XP: 0
-  Feitico: 0
+  PossibleSpells: 

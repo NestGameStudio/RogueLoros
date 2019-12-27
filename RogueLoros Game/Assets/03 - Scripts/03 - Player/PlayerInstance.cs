@@ -29,6 +29,8 @@ public class PlayerInstance: MonoBehaviour
     [HideInInspector] public int Money;
 	[HideInInspector] public int Keys = 0;
 
+	[HideInInspector] public List<GameObject> Spells = new List<GameObject>();
+
 	[HideInInspector] public SaveData Data;
 
     // Start is called before the first frame update

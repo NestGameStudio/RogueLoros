@@ -79,7 +79,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5461639172213396112, guid: 383715c2be854454a9dd3d6908350a15,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[2]
+      value: 
+      objectReference: {fileID: 3269361086808041001, guid: 4a3a374c602494ec2ab6a202d8ed7595,
+        type: 3}
+    - target: {fileID: 5461639172213396112, guid: 383715c2be854454a9dd3d6908350a15,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[6]
+      value: 
+      objectReference: {fileID: 5447146382237284988}
+    - target: {fileID: 5461639172213396112, guid: 383715c2be854454a9dd3d6908350a15,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[3]
+      value: 
+      objectReference: {fileID: 2035660816119730644, guid: c432e99fb13894a53bbeeeaa181c97b0,
+        type: 3}
+    - target: {fileID: 5461639172213396112, guid: 383715c2be854454a9dd3d6908350a15,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[4]
+      value: 
+      objectReference: {fileID: 4032668274774422238, guid: 24fe4887d732e4ddc9a73634df3678af,
+        type: 3}
+    - target: {fileID: 5461639172213396112, guid: 383715c2be854454a9dd3d6908350a15,
+        type: 3}
+      propertyPath: SpellTypes.Array.data[5]
+      value: 
+      objectReference: {fileID: 5371449380723072727, guid: 383715c2be854454a9dd3d6908350a15,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 119890851585962265, guid: 383715c2be854454a9dd3d6908350a15, type: 3}
+    - {fileID: 8060220615021622517, guid: 383715c2be854454a9dd3d6908350a15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 383715c2be854454a9dd3d6908350a15, type: 3}
 --- !u!1 &5447146382237284988 stripped
 GameObject:
