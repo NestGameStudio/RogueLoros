@@ -18,10 +18,23 @@ public class ActionChest : NodeAction {
             PlayerInstance.Instance.IncreaseHealth(currentChest.HealValue);
             ExperienceManager.Instance.IncreaseXPPoints(currentChest.XP);
 
-            //Tocar animação do bau abrindo
-            gameObject.transform.GetChild(0).GetChild(1).GetComponent<Animator>().Play("Bau-Open");
+            // randomiza quais dos feiticos possiveis podem sair
+            if (currentChest.Feiticos.Length > 0) {
+
+                int typeIndex = Random.Range(0, currentChest.Feiticos.Length);
+
+                // cria o feitico
+                GameObject Spell = SpellManager.Instance.CreateSpell(currentChest.Feiticos[typeIndex]);
+
+                // Verifica quantos espacos vazios ainda tem na HUD de feiticos
+                // Adiciona o feitico a lista de feiticos
+
+            }
 
             // fazer algo para acrescentar feitiço
+
+            //Tocar animação do bau abrindo
+            gameObject.transform.GetChild(0).GetChild(1).GetComponent<Animator>().Play("Bau-Open");
 
             PlayerInstance.Instance.Keys -= 1;
         }
