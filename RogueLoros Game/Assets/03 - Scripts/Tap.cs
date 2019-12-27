@@ -19,6 +19,8 @@ public class Tap : MonoBehaviour
 
     private bool isEnemy = false;
 
+    private bool canWalk = true;
+
     private void OnMouseDown() {
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -32,7 +34,7 @@ public class Tap : MonoBehaviour
         // Faz a acao do node e faz o player andar até o node
         if (hit.collider.gameObject != null)
         {
-            if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode)
+            if (hit.collider.gameObject.GetComponent<NodeInstance>().canWalkInThisNode && canWalk)
             {
 
 
@@ -72,11 +74,16 @@ public class Tap : MonoBehaviour
     private IEnumerator WaitForAnimation(string animationName) {
 
         anim.SetTrigger("Open");
+
+        canWalk = false;
+
         do {
             yield return null;
         } while (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName));
 
         MovePlayer();
+
+        canWalk = true;
     }
 
 }
