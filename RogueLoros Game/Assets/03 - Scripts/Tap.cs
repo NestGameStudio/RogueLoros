@@ -7,9 +7,6 @@ using UnityEngine;
 
 public class Tap : MonoBehaviour
 {
-    // OBS: limitar o drag em favor do tap, se tiver segurando tempo suficiente vira drag
-    // Talvez considerar tap se o objecto não se mover
-
     public GameObject Player;
 
     public Animator anim;
