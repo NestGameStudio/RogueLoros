@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca184e9a39bb54288a7bb79259c9f473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUDImage: {r: 0.4453504, g: 1, b: 0, a: 1}
 --- !u!1001 &3539552420207147005
 PrefabInstance:
   m_ObjectHideFlags: 0

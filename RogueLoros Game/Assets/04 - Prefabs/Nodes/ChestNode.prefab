@@ -1,42 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9075930900584703875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8553631486718364829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957899c209d8943a4b78f54f4a0461a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PossibleChestsEasy:
-  - {fileID: 11400000, guid: d88e547d083ab4ad8a859480b22d0afc, type: 2}
-  - {fileID: 11400000, guid: da529ae9237ed44b9a530a66451c79a1, type: 2}
-  - {fileID: 11400000, guid: c6a97a58ada5e4dafb3c23e247a82bf9, type: 2}
-  - {fileID: 11400000, guid: f67be7c8a36244e3eba846fef994ab14, type: 2}
-  PossibleChestsMedium: []
-  PossibleChestsHard: []
-  Image: {fileID: 0}
-  Coin: 0
-  HealValue: 0
-  XP: 0
-  Feitico: 0
-  currentChest: {fileID: 0}
---- !u!114 &5435797387975342387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8553631486718364829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871d3255e1c064d579f85a3a90e3e522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3940260318172924214
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +343,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-9075930900584703875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553631486718364829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957899c209d8943a4b78f54f4a0461a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PossibleChestsEasy:
+  - {fileID: 11400000, guid: 16636020d6f854cfaaa2e8255a0e3062, type: 2}
+  PossibleChestsMedium: []
+  PossibleChestsHard: []
+  Image: {fileID: 0}
+  Coin: 0
+  HealValue: 0
+  XP: 0
+  Feiticos: 
+  currentChest: {fileID: 0}
+--- !u!114 &5435797387975342387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553631486718364829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871d3255e1c064d579f85a3a90e3e522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1372513170319144531
 PrefabInstance:
   m_ObjectHideFlags: 0

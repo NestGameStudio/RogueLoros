@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
   Coin: 0
-  HealValue: 50
+  HealValue: 0
   XP: 0
-  PossibleSpells: 000000000300000005000000
+  Feiticos: 010000000400000006000000

@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum SpellType { None, Fireball, MegaFireball, Fenix, Heal, SuperHeal, Protection, Armor, SuperArmor, Arcane, Curse }
 
-public class SpellManager : MonoBehaviour
+public class SpellManager: MonoBehaviour
 {
     #region Singleton
 
@@ -27,6 +28,12 @@ public class SpellManager : MonoBehaviour
 
     public GameObject SpellsParent;
 
+    [Header("HUD Itens")]
+    public List<GameObject> SpellsSlots;
+
+    public Sprite EmptySlotImage;
+
+
     public GameObject CreateRandomSpell() {
 
         int index = Random.Range(0, SpellTypes.Count);
@@ -38,8 +45,11 @@ public class SpellManager : MonoBehaviour
 
         GameObject seletedSpell = null;
 
-        switch (type) {
-            case SpellType.Fireball:
+        // Verifica se tem espaço na HUD
+        if (HasSpaceInHUD()) {
+
+            switch (type) {
+                case SpellType.Fireball:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionFireball>()) {
@@ -49,17 +59,17 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.MegaFireball:
+                case SpellType.MegaFireball:
 
-                foreach (GameObject spell in SpellTypes){
-                    if (spell.GetComponent<SpellActionMegaFireball>()){
+                foreach (GameObject spell in SpellTypes) {
+                    if (spell.GetComponent<SpellActionMegaFireball>()) {
                         seletedSpell = spell;
                         break;
                     }
                 }
 
                 break;
-            case SpellType.Fenix:
+                case SpellType.Fenix:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionFenix>()) {
@@ -69,7 +79,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.Heal:
+                case SpellType.Heal:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionHeal>()) {
@@ -79,7 +89,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.SuperHeal:
+                case SpellType.SuperHeal:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionSuperHeal>()) {
@@ -89,7 +99,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.Protection:
+                case SpellType.Protection:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionProtection>()) {
@@ -99,7 +109,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.Armor:
+                case SpellType.Armor:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionArmor>()) {
@@ -109,7 +119,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.SuperArmor:
+                case SpellType.SuperArmor:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionSuperArmor>()) {
@@ -119,7 +129,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.Arcane:
+                case SpellType.Arcane:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionArcane>()) {
@@ -129,7 +139,7 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            case SpellType.Curse:
+                case SpellType.Curse:
 
                 foreach (GameObject spell in SpellTypes) {
                     if (spell.GetComponent<SpellActionCurse>()) {
@@ -139,13 +149,76 @@ public class SpellManager : MonoBehaviour
                 }
 
                 break;
-            default:
+                default:
                 Debug.LogError("Feitico nao existe");
                 break;
+            }
+
+            GameObject Spell = Instantiate(seletedSpell, SpellsParent.transform);
+            AddSpell(Spell);
+
+            return Spell;
         }
 
-        GameObject Spell = Instantiate(seletedSpell, SpellsParent.transform);
-
-        return Spell;
+        return null;
     }
+
+    // -------- Cuida das coisas da HUD de feitiços ---------
+
+    private bool HasSpaceInHUD() {
+
+        bool hasSpace = false;
+
+        foreach(GameObject spellSlot in SpellsSlots) {
+            if (spellSlot.GetComponent<SpellInstance>().CurrentSpell == null) {
+                hasSpace = true;
+                break;
+            }
+        }
+
+        return hasSpace;
+    }
+
+    // Depois de usar uma spell reorganiza elas puxando para a esquerda
+    private void ReorganizeSpellSlots() {
+
+        for (int i=0; i==SpellsSlots.Count-1; i++) {
+
+            if (SpellsSlots[i].GetComponent<SpellInstance>().CurrentSpell == null &&
+                SpellsSlots[i+1].GetComponent<SpellInstance>().CurrentSpell != null) {
+
+                AddSpell(SpellsSlots[i + 1].GetComponent<SpellInstance>().CurrentSpell);
+                RemoveSpell(i+1);
+
+                break;
+
+            }
+
+        }
+
+    } 
+
+    // Adiciona a Spell no primeiro espaço disponível
+    private void AddSpell(GameObject spell) {
+
+        foreach (GameObject spellSlot in SpellsSlots) {
+            if (spellSlot.GetComponent<SpellInstance>().CurrentSpell == null) {
+                spellSlot.GetComponent<SpellInstance>().CurrentSpell = spell;
+
+                // Mudar para sprite no futuro
+                spellSlot.transform.GetChild(0).GetComponent<Image>().color = spell.GetComponent<SpellAction>().HUDImage;
+
+                break;
+            }
+        }
+    }
+
+    // Remove a Spell do espaço atual
+    public void RemoveSpell(int index) {
+
+        Destroy(SpellsSlots[index].GetComponent<SpellInstance>().CurrentSpell);
+        SpellsSlots[index].GetComponent<SpellInstance>().CurrentSpell = null;
+        SpellsSlots[index].transform.GetChild(0).GetComponent<Image>().sprite = EmptySlotImage;
+    }
+
 }

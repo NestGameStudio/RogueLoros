@@ -113,3 +113,8 @@ MonoBehaviour:
   - {fileID: 7134462715240074669, guid: 4dfcd9d3597b947529c6c3e6926a5ab3, type: 3}
   - {fileID: 5888033249839461422, guid: 285baeb6e33264703a4a35085827d695, type: 3}
   SpellsParent: {fileID: 0}
+  SpellsSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

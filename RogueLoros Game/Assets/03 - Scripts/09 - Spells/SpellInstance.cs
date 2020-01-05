@@ -10,9 +10,11 @@ public class SpellInstance : MonoBehaviour
     // Tem feitições que são só usar
 
     [SerializeField]
-    public List<GameObject> SpellTypes;
+    //public List<GameObject> SpellTypes;
 
-    private SpellType currentType = SpellType.None;
+    [HideInInspector] public GameObject CurrentSpell;
+
+    [HideInInspector] public SpellType CurrentType = SpellType.None;
 
     // Start is called before the first frame update
     void Start()
