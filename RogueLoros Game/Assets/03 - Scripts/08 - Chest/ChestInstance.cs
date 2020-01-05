@@ -15,7 +15,7 @@ public class ChestInstance : MonoBehaviour
     [HideInInspector] public int XP = 0;
 
     // Feitico vai ser um scoobydoos sorteado entre alguns
-    [HideInInspector] public int Feitico = 0;
+    [HideInInspector] public List<SpellType> Feiticos;
 
     [HideInInspector] public Chest currentChest;
 
@@ -49,7 +49,7 @@ public class ChestInstance : MonoBehaviour
         Coin = currentChest.Coin;
         HealValue = currentChest.HealValue;
         XP = currentChest.XP;
-        Feitico = currentChest.Feitico;
+        Feiticos = currentChest.Feiticos;
     }
 
 

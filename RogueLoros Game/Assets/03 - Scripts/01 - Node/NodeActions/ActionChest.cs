@@ -23,9 +23,9 @@ public class ActionChest : NodeAction {
             Debug.Log("XP: " + currentChest.XP);
 
             // randomiza quais dos feiticos possiveis podem sair
-            if (currentChest.Feiticos.Length > 0) {
+            if (currentChest.Feiticos.Count > 0) {
 
-                int typeIndex = Random.Range(0, currentChest.Feiticos.Length);
+                int typeIndex = Random.Range(0, currentChest.Feiticos.Count);
 
                 // cria o feitico
                 GameObject Spell = SpellManager.Instance.CreateSpell(currentChest.Feiticos[typeIndex]);
