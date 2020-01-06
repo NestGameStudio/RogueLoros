@@ -182,15 +182,20 @@ public class SpellManager: MonoBehaviour
     // Depois de usar uma spell reorganiza elas puxando para a esquerda
     private void ReorganizeSpellSlots() {
 
-        for (int i=0; i==SpellsSlots.Count-1; i++) {
+        for (int i=0; i<SpellsSlots.Count-1; i++) {
+
+            Debug.Log("Atual " + SpellsSlots[i].GetComponent<SpellInstance>().CurrentType);
+            Debug.Log("Proximo " + SpellsSlots[i+1].GetComponent<SpellInstance>().CurrentType);
 
             if (SpellsSlots[i].GetComponent<SpellInstance>().CurrentSpell == null &&
                 SpellsSlots[i+1].GetComponent<SpellInstance>().CurrentSpell != null) {
 
+                Debug.Log("reorganizei");
+
                 AddSpell(SpellsSlots[i + 1].GetComponent<SpellInstance>().CurrentSpell);
                 RemoveSpell(i+1);
 
-                break;
+                //break;
 
             }
 

@@ -50,6 +50,7 @@ public class ChestInstance : MonoBehaviour
         HealValue = currentChest.HealValue;
         XP = currentChest.XP;
         Feiticos = currentChest.Feiticos;
+
     }
 
 

@@ -25,6 +25,7 @@ public class ExperienceManager: MonoBehaviour
     public Text AttackLabel;
     public Text MagicLabel;
     public Text MoneyLabel;
+    public Text KeyLabel;
     public Slider HealthSlider;
 
     public GameObject PlayerStatsUI;
@@ -72,6 +73,7 @@ public class ExperienceManager: MonoBehaviour
         AttackLabel.text = PlayerInstance.Instance.AP.GetMinPossibleAttackRange().ToString() + "-" + PlayerInstance.Instance.AP.GetMaxPossibleAttackRange().ToString();
         MagicLabel.text = PlayerInstance.Instance.MP.GetMinPossibleMagicRange().ToString() + "-" + PlayerInstance.Instance.MP.GetMaxPossibleMagicRange().ToString();
         MoneyLabel.text = PlayerInstance.Instance.Money.ToString();
+        KeyLabel.text = PlayerInstance.Instance.Keys.ToString();
         if (HealthSlider) {
             HealthSlider.value = PlayerInstance.Instance.HP.GetCurrentLife() * 1.0f / PlayerInstance.Instance.HP.GetMaxPossibleLife();
         }

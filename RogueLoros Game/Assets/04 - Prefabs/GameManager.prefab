@@ -50,6 +50,7 @@ MonoBehaviour:
   AttackLabel: {fileID: 0}
   MagicLabel: {fileID: 0}
   MoneyLabel: {fileID: 0}
+  KeyLabel: {fileID: 0}
   HealthSlider: {fileID: 0}
   PlayerStatsUI: {fileID: 0}
   HPLevelUp: {fileID: 0}

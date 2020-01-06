@@ -69,6 +69,7 @@ public class ActionEnemy : NodeAction
             if (dropkey == 1)
             {
                 PlayerInstance.Instance.Keys += 1;
+                ExperienceManager.Instance.UpdateUI();
             }
 
             // Permite o player andar até a posicao do inimigo

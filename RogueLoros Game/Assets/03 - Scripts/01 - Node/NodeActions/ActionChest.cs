@@ -47,6 +47,7 @@ public class ActionChest : NodeAction {
             gameObject.transform.GetChild(0).GetChild(1).GetComponent<Animator>().Play("Bau-Open");
 
             PlayerInstance.Instance.Keys -= 1;
+            ExperienceManager.Instance.UpdateUI();
         }
     }
 
