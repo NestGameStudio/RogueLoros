@@ -29,7 +29,7 @@ public class SpellManager: MonoBehaviour
     public GameObject SpellsParent;
 
     [Header("HUD Itens")]
-    public List<GameObject> SpellsSlots;
+    public List<Button> SpellsSlots;
 
     public Sprite EmptySlotImage;
 
@@ -169,7 +169,7 @@ public class SpellManager: MonoBehaviour
 
         bool hasSpace = false;
 
-        foreach(GameObject spellSlot in SpellsSlots) {
+        foreach(Button spellSlot in SpellsSlots) {
             if (spellSlot.GetComponent<SpellInstance>().CurrentSpell == null) {
                 hasSpace = true;
                 break;
@@ -201,12 +201,12 @@ public class SpellManager: MonoBehaviour
     // Adiciona a Spell no primeiro espaço disponível
     private void AddSpell(GameObject spell) {
 
-        foreach (GameObject spellSlot in SpellsSlots) {
+        foreach (Button spellSlot in SpellsSlots) {
             if (spellSlot.GetComponent<SpellInstance>().CurrentSpell == null) {
                 spellSlot.GetComponent<SpellInstance>().CurrentSpell = spell;
 
                 // Mudar para sprite no futuro
-                spellSlot.transform.GetChild(0).GetComponent<Image>().color = spell.GetComponent<SpellAction>().HUDImage;
+                spellSlot.GetComponent<Image>().color = spell.GetComponent<SpellAction>().HUDImage;
 
                 break;
             }
@@ -218,7 +218,22 @@ public class SpellManager: MonoBehaviour
 
         Destroy(SpellsSlots[index].GetComponent<SpellInstance>().CurrentSpell);
         SpellsSlots[index].GetComponent<SpellInstance>().CurrentSpell = null;
-        SpellsSlots[index].transform.GetChild(0).GetComponent<Image>().sprite = EmptySlotImage;
+        // mudar isso pra sprite quando mudar
+        SpellsSlots[index].GetComponent<Image>().color = Color.white;
+
+        ReorganizeSpellSlots();
+    }
+
+    // Remove Spell direto do slot
+    public void RemoveSpell(Button slot) {
+        int counter = 0;
+
+        foreach (Button spellSlot in SpellsSlots) {
+            if (spellSlot == slot) {
+                RemoveSpell(counter);
+            }
+            counter += 1;
+        }
     }
 
 }

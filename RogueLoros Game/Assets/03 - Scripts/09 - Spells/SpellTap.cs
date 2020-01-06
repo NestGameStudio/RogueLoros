@@ -21,11 +21,16 @@ public class SpellTap: MonoBehaviour
 
     private void OnMouseUp() {
 
+        Debug.Log("TOCOU AAAA");
+
+
         if (hit.collider.gameObject != null) {
+            Debug.Log("TOCOU");
 
             // faz a ação do spell
             if (hit.collider.gameObject.GetComponent<SpellAction>()) {
-
+                hit.collider.gameObject.GetComponent<SpellAction>().DoAction();
+                //SpellManager.Instance.RemoveSpell(this.gameObject);
             }
 
         }

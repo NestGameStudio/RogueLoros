@@ -118,3 +118,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  EmptySlotImage: {fileID: 21300000, guid: 55935e85fab1fe6449d5f5c58dad497a, type: 3}

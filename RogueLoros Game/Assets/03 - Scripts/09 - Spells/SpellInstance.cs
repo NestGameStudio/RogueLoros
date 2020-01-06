@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellInstance : MonoBehaviour
 {
@@ -15,6 +16,17 @@ public class SpellInstance : MonoBehaviour
     [HideInInspector] public GameObject CurrentSpell;
 
     [HideInInspector] public SpellType CurrentType = SpellType.None;
+
+
+    public void DoSpellAction() {
+
+        if (CurrentSpell != null) {
+            CurrentSpell.GetComponent<SpellAction>().DoAction();
+            SpellManager.Instance.RemoveSpell(this.GetComponent<Button>());
+        } else {
+            Debug.Log("Não tem feitiço nesse slot");
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
