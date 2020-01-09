@@ -155,7 +155,7 @@ public class SpellManager: MonoBehaviour
             }
 
             GameObject Spell = Instantiate(seletedSpell, SpellsParent.transform);
-            AddSpell(Spell);
+            AddSpell(Spell, type);
 
             return Spell;
         }
@@ -184,16 +184,17 @@ public class SpellManager: MonoBehaviour
 
         for (int i=0; i<SpellsSlots.Count-1; i++) {
 
-            Debug.Log("Atual " + SpellsSlots[i].GetComponent<SpellInstance>().CurrentType);
-            Debug.Log("Proximo " + SpellsSlots[i+1].GetComponent<SpellInstance>().CurrentType);
-
             if (SpellsSlots[i].GetComponent<SpellInstance>().CurrentSpell == null &&
                 SpellsSlots[i+1].GetComponent<SpellInstance>().CurrentSpell != null) {
 
+                Debug.Log("Atual Index: " + i + " " + SpellsSlots[i].GetComponent<SpellInstance>().CurrentSpell);
+                Debug.Log("Proximo Index: " + (i + 1) + " " + SpellsSlots[i + 1].GetComponent<SpellInstance>().CurrentSpell);
+
                 Debug.Log("reorganizei");
 
-                AddSpell(SpellsSlots[i + 1].GetComponent<SpellInstance>().CurrentSpell);
-                RemoveSpell(i+1);
+                CreateSpell(SpellsSlots[i + 1].GetComponent<SpellInstance>().CurrentType);
+                //AddSpell(SpellsSlots[i + 1].GetComponent<SpellInstance>().CurrentSpell);
+                RemoveSpell(SpellsSlots[i + 1]);
 
                 //break;
 
@@ -204,11 +205,14 @@ public class SpellManager: MonoBehaviour
     } 
 
     // Adiciona a Spell no primeiro espaço disponível
-    private void AddSpell(GameObject spell) {
+    private void AddSpell(GameObject spell, SpellType type) {
 
         foreach (Button spellSlot in SpellsSlots) {
             if (spellSlot.GetComponent<SpellInstance>().CurrentSpell == null) {
                 spellSlot.GetComponent<SpellInstance>().CurrentSpell = spell;
+                spellSlot.GetComponent<SpellInstance>().CurrentType = type;
+
+                Debug.Log("Spell Nova: " + spellSlot.GetComponent<SpellInstance>().CurrentSpell);
 
                 // Mudar para sprite no futuro
                 spellSlot.GetComponent<Image>().color = spell.GetComponent<SpellAction>().HUDImage;
@@ -226,7 +230,6 @@ public class SpellManager: MonoBehaviour
         // mudar isso pra sprite quando mudar
         SpellsSlots[index].GetComponent<Image>().color = Color.white;
 
-        ReorganizeSpellSlots();
     }
 
     // Remove Spell direto do slot
@@ -239,6 +242,9 @@ public class SpellManager: MonoBehaviour
             }
             counter += 1;
         }
+
+        ReorganizeSpellSlots();
+
     }
 
 }
